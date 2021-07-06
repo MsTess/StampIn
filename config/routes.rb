@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :countries, only: [:index, :show]
   post "/countries/:id/bookmark_result", :to => "countries#bookmark_result"
+  delete "/countries/:id/remove_result_bookmark/:id", :to => "countries#remove_result_bookmark"
+  resources :embassies, only: [:index, :show]
+  post "/embassies/:id/bookmark_embassy", :to => "embassies#bookmark_embassy"
+  delete "/embassies/:id/remove_embassy_bookmark/:id", :to => "embassies#remove_embassy_bookmark"
 end
