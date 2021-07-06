@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_073547) do
+ActiveRecord::Schema.define(version: 2021_07_06_084616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(version: 2021_07_06_073547) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "embassies", force: :cascade do |t|
+    t.string "Embassy_Of"
+    t.string "In_Country"
+    t.string "In_City"
+    t.string "Embassy_hijo_h3"
+    t.string "Embassy_Consulate"
+    t.string "Address"
+    t.string "Address_link_GMaps"
+    t.string "Emails"
+    t.string "URL"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "countries_id"
+    t.index ["countries_id"], name: "index_embassies_on_countries_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -42,4 +58,5 @@ ActiveRecord::Schema.define(version: 2021_07_06_073547) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "embassies", "countries", column: "countries_id"
 end
