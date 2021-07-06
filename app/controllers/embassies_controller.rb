@@ -1,0 +1,2 @@
+class EmbassiesController < ApplicationController
+end
