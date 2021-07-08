@@ -35,21 +35,23 @@ require 'open-uri'
 
   postman_url = "https://onlinevisa.com/page-data/embassies/albania/page-data.json"
 
+  Embassy.destroy_all
   response = RestClient.get(postman_url)
-  embassies = JSON.parse
+  embassies = JSON.parse(response)
+  embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
   embassies.each {|embassy|
-    emails = []
-    embassy["Emails"].each {|em|
-      emails << em}
+    # emails = []
+    # embassy["Emails"].each {|em|
+    #   emails << em}
     e = Embassy.create!(
-      Embassy_Of: embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["Embassy_of"],
-      In_Country: embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["In_Country"],
-      In_City: embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["In_City"],
-      Embassy_hijo_h3:embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["Embassy_Consulate"],
-      Embassy_Consulate:embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["Embassy_of"],
-      Address:embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["Address"],
-      ddress_link_GMaps:embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["Address_link_GMaps"],
-      Emails:embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["Emails"],
-      URL:embassy["result"]["data"]["allScrapingCsv"]["edges"]["node"]["URL"])
+      Embassy_Of: embassy["node"]["Embassy_of"],
+      In_Country: embassy["node"]["In_Country"],
+      In_City: embassy["node"]["in_City"],
+      Embassy_hijo_h3:embassy["node"]["Embassy_Consulate"],
+      Embassy_Consulate:embassy["node"]["Embassy_of"],
+      Address:embassy["node"]["Address"],
+      Address_link_GMaps:embassy["node"]["Address_link_GMaps"],
+      Emails:embassy["node"]["Emails"],
+      URL:embassy["node"]["URLs"])
     puts "Created embassy of #{e.Embassy_Of} in #{e.In_City}"
     }
