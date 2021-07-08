@@ -17,6 +17,11 @@ countries.each {|country|
     languages = []
     country["languages"].each {|l|
     languages << l["name"]}
+    
+    currencies = []
+    country["currencies"].each {|c|
+    currencies << c["name"]}
+    
     c = Country.create!(
         name: country["name"],
         alpha2code: country["alpha2Code"],
@@ -24,7 +29,7 @@ countries.each {|country|
         timezones: country["timezones"],
         languages: languages.join(", "),
         flag: country["flag"],
-        currencies: country["currencies"],
+        currencies: currencies.join(", "),
         demonym: country["demonym"],
         latlng: country["latlng"],
         callingCodes: country["callingCodes"])
