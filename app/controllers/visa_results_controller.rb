@@ -18,7 +18,6 @@ class VisaResultsController < ApplicationController
           })
             p v_country_serialized
             v_country = JSON.parse(v_country_serialized)
-            puts v_country
             c = v_country["countryCombination"]
             @vr = VisaResult.create!(
               visa_modality: c["visaModality"],
@@ -31,5 +30,10 @@ class VisaResultsController < ApplicationController
     end
     
     def show
+      @visa_result = VisaResult.find(params[:id])
+      @countries = Country.all
+      @d_c = @visa_result.destination_country
+      @o_c = @visa_result.origin_country
+      #@embassy = Embassy.find_by(Embassy_Of: @d_c, In_Country: @o_c)
     end
 end
