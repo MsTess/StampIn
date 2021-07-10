@@ -1,1 +1,6 @@
-<h1>Hi</h1>
+
+<h1>Your visa requirements for <%= @d_c.name %></h1>
+<%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
+<%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
+
+<%#= link_to "Learn about the embassy info", embassy_path(@embassy) %>
