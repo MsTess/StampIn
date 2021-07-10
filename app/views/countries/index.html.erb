@@ -4,7 +4,7 @@
     <div class="col-6">
       <div class="bg-white rounded p-3 shadow">
         <div class="form">
-          <%= simple_form_for(:search, url: visa_results_countries_path) do |f| %>
+          <%= simple_form_for(@visa_result) do |f| %>
             <%= f.input :origin_country, collection: @countries %>
             <%= f.input :destination_country, collection: @countries%>
             <%= f.submit class: 'red_button'%>
