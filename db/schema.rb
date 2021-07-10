@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_084616) do
+ActiveRecord::Schema.define(version: 2021_07_10_033644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,5 +58,18 @@ ActiveRecord::Schema.define(version: 2021_07_06_084616) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "visa_results", force: :cascade do |t|
+    t.string "visa_modality"
+    t.string "evisa_modality"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "origin_country_id", null: false
+    t.bigint "destination_country_id", null: false
+    t.index ["destination_country_id"], name: "index_visa_results_on_destination_country_id"
+    t.index ["origin_country_id"], name: "index_visa_results_on_origin_country_id"
+  end
+
   add_foreign_key "embassies", "countries", column: "countries_id"
+  add_foreign_key "visa_results", "countries", column: "destination_country_id"
+  add_foreign_key "visa_results", "countries", column: "origin_country_id"
 end
