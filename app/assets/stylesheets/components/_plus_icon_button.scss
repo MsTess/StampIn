@@ -1,0 +1,21 @@
+// <!-- Add icon library -->
+// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+// This button is intended for the search page to add more people to compare for visa modality and you need to add this to the html as it is a bootstrap btn
+// <button class="plus_btn"><i class="fas fa-plus"></i></button>
+
+.plus_btn {
+  background-color: var(--blue); /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/*change in background on mouse-over */
+.plus_btn:hover {
+  background-color: #FFFFFF%;
+  color: var(--blue);
+  border: var(--blue);
+  box-shadow: 5px;
+}
