@@ -1,4 +1,5 @@
 class Embassy < ApplicationRecord
+  has_many :bookmark_embassies
   # belongs_to :country
   # validates :Embassy_Of,
   #           :In_Country,
