@@ -35,7 +35,7 @@ countries.each {|country|
 
   postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
 
-  Embassy.destroy_all
+  # Embassy.destroy_all
   begin
     response = RestClient.get(postman_url)
   rescue RestClient::ExceptionWithResponse => err
