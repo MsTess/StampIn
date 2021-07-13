@@ -1,6 +1,6 @@
-.orange_button {
+.blue_button {
   border-radius: 4px;
-  background-color: #ff6100;
+  background-color: var(--blue);
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -13,14 +13,14 @@
   font-family: Georgia;
 }
 
-.orange_button span {
+.blue_button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.orange_button span:after {
+.blue_button span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -29,11 +29,11 @@
   transition: 0.5s;
 }
 
-.orange_button:hover span {
+.blue_button:hover span {
   padding-right: 25px;
 }
 
-.orange_button:hover span:after {
+.blue_button:hover span:after {
   opacity: 1;
   right: 0;
 }
