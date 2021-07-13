@@ -9,7 +9,7 @@
         <div class="col mt-3">
             <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
               <div class="card-body">
-                <h6 class="card-title">Embassy of <%= embassy.Embassy_Of %>, <%= embassy.In_City %>, <%= embassy.In_Country %></h6>
+                <h6 class="card-title">Embassy of <%= embassy.origin_country.name %>, in <%= embassy.in_city %>, <%= embassy.destination_country.name %></h6>
                 <h5 class="btn btn-dark"> <%= link_to "View information", embassy_path(embassy), style:"text-decoration: none; color: white" %></h5>
               </div>
             </div>
