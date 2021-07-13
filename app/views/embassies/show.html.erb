@@ -2,16 +2,21 @@
   <div class="row">
     <div class="col-6">
       <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
-        <h2 class="display-4">Embassy of <%= @embassy.Embassy_Of %>, <%= @embassy.In_City %>, <%= @embassy.In_Country %></h1>
+        <h2 class="display-4">Embassy of <%= @embassy.origin_country.name %>, <%= @embassy.in_city %>, <%= @embassy.destination_country.name %></h1>
         <div class="form-container">
           <hr class="my-4">
-          <h6 class="lead">Street Address: <i><%= @embassy.Address %></i></h6>
+          <h6 class="lead">Street Address: <i><%= @embassy.address %></i></h6>
           <hr class="my-4">
-          <h3 class="lead">E-Mail Address: <i><%= @embassy.Emails ? @embassy.Emails : "E-Mail address not available" %></i></h3>
+          <h3 class="lead">E-Mail Address: <i><%= @embassy.emails ? @embassy.emails : "E-Mail address not available" %></i></h3>
           <hr class="my-4">
-          <h5 class="lead">Web Address: <i><%= @embassy.URL? ? @embassy.URL : "Web address not available" %></i></h5>
+          <h5 class="lead">Web Address: <i><%= @embassy.url? ? @embassy.url : "Web address not available" %></i></h5>
           <hr class="my-4">
-          <h5 class="btn btn-dark"> <%= link_to "Google Maps", @embassy.URL, style:"text-decoration: none; color: white" %></h5>
+          <h5 class="btn btn-dark"> <%= link_to "Google Maps", @embassy.url, style:"text-decoration: none; color: white" %></h5>
+          <div id="map"
+            style="width: 100%; height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            >
+          </div>
         </div>
       </div>
     </div>

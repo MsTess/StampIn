@@ -1,15 +1,13 @@
 class CreateEmbassies < ActiveRecord::Migration[6.0]
   def change
     create_table :embassies do |t|
-      t.string :Embassy_Of
-      t.string :In_Country
-      t.string :In_City
-      t.string :Embassy_hijo_h3
-      t.string :Embassy_Consulate
-      t.string :Address
-      t.string :Address_link_GMaps
-      t.string :Emails
-      t.string :URL
+      t.string :in_city
+      t.string :embassy_hijo_h3
+      t.string :embassy_consulate
+      t.string :address
+      t.string :address_link_gmaps
+      t.string :emails
+      t.string :url
 
       t.timestamps
     end
