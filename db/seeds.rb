@@ -3,31 +3,31 @@ require 'open-uri'
 
 # url = "https://restcountries.eu/rest/v2/all"
 
-Country.destroy_all
-country_serialized = URI.open(url).read
-countries = JSON.parse(country_serialized)
-countries.each {|country|
-    languages = []
-    country["languages"].each {|l|
-    languages << l["name"]}
+# Country.destroy_all
+# country_serialized = URI.open(url).read
+# countries = JSON.parse(country_serialized)
+# countries.each {|country|
+#     languages = []
+#     country["languages"].each {|l|
+#     languages << l["name"]}
     
-    currencies = []
-    country["currencies"].each {|c|
-    currencies << c["name"]}
+#     currencies = []
+#     country["currencies"].each {|c|
+#     currencies << c["name"]}
     
-    c = Country.create!(
-        name: country["name"],
-        alpha2code: country["alpha2Code"],
-        capital: country["capital"],
-        timezones: country["timezones"],
-        languages: languages.join(", "),
-        flag: country["flag"],
-        currencies: currencies.join(", "),
-        demonym: country["demonym"],
-        latlng: country["latlng"],
-        callingCodes: country["callingCodes"])
-        puts "Created: #{c.name}"
-}
+#     c = Country.create!(
+#         name: country["name"],
+#         alpha2code: country["alpha2Code"],
+#         capital: country["capital"],
+#         timezones: country["timezones"],
+#         languages: languages.join(", "),
+#         flag: country["flag"],
+#         currencies: currencies.join(", "),
+#         demonym: country["demonym"],
+#         latlng: country["latlng"],
+#         callingCodes: country["callingCodes"])
+#         puts "Created: #{c.name}"
+# }
 
   postman_url = "https://onlinevisa.com/page-data/embassies/albania/page-data.json"
 
