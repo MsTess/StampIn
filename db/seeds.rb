@@ -3,7 +3,7 @@ require 'open-uri'
 
 url = "https://restcountries.eu/rest/v2/all"
 
-Country.destroy_all
+# Country.destroy_all
 country_serialized = URI.open(url).read
 countries = JSON.parse(country_serialized)
 countries.each {|country|
