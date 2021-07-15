@@ -18,8 +18,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
+    
     <%= javascript_pack_tag 'map' %>
   </body>
 </html>
