@@ -5,5 +5,11 @@ class EmbassiesController < ApplicationController
 
   def show
     @embassy = Embassy.find(params[:id])
+
+    @markers =
+    {
+        lat: @embassy.latitude,
+        lng: @embassy.longitude
+    }
   end
 end

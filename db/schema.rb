@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_07_13_121425) do
 
   # These are extensions that must be enabled in order to support this database
@@ -49,19 +50,23 @@ ActiveRecord::Schema.define(version: 2021_07_13_121425) do
   end
 
   create_table "embassies", force: :cascade do |t|
-    t.string "Embassy_Of"
-    t.string "In_Country"
-    t.string "In_City"
-    t.string "Embassy_hijo_h3"
-    t.string "Embassy_Consulate"
-    t.string "Address"
-    t.string "Address_link_GMaps"
-    t.string "Emails"
-    t.string "URL"
+    t.string "in_city"
+    t.string "embassy_hijo_h3"
+    t.string "embassy_consulate"
+    t.string "address"
+    t.string "address_link_gmaps"
+    t.string "emails"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "countries_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "origin_country_id", null: false
+    t.bigint "destination_country_id", null: false
     t.index ["countries_id"], name: "index_embassies_on_countries_id"
+    t.index ["destination_country_id"], name: "index_embassies_on_destination_country_id"
+    t.index ["origin_country_id"], name: "index_embassies_on_origin_country_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,6 +97,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_121425) do
   add_foreign_key "bookmark_visa_results", "users"
   add_foreign_key "bookmark_visa_results", "visa_results"
   add_foreign_key "embassies", "countries", column: "countries_id"
+  add_foreign_key "embassies", "countries", column: "destination_country_id"
+  add_foreign_key "embassies", "countries", column: "origin_country_id"
   add_foreign_key "visa_results", "countries", column: "destination_country_id"
   add_foreign_key "visa_results", "countries", column: "origin_country_id"
 end
