@@ -1,0 +1,6 @@
+<h1>Your visa requirements </h1>
+<% @bookmark_visa_results.each do |result|%>
+<%= result.visa_result.destination_country.name %><
+<%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
+<%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
+<% end %>

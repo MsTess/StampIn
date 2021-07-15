@@ -1,6 +1,21 @@
-
-<h1>Your visa requirements for <%= @d_c.name %></h1>
-<%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
-<%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div>
+      <p>Click on the link below for further information regarding visa requirements.</p>
+    </div>
+    <div class="col-6">
+      <div class="bg-white rounded p-3 shadow">
+        <div class="visa_results_heading">
+        <h3>Your visa requirements for <%= @d_c.name %></h3>
+        </div>
+        <div class="row justify-content-center">
+          <%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
+          <%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
+          <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%#= link_to "Learn about the embassy info", embassy_path(@embassy) %>
