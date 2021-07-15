@@ -34,6 +34,7 @@ class VisaResultsController < ApplicationController
       @countries = Country.all
       @d_c = @visa_result.destination_country
       @o_c = @visa_result.origin_country
-      #@embassy = Embassy.find_by(Embassy_Of: @d_c, In_Country: @o_c)
+      @user = current_user
+      @visa_result_bookmark = BookmarkVisaResult.new
     end
 end

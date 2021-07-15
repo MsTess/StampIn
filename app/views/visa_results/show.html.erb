@@ -11,6 +11,7 @@
         <div class="row justify-content-center">
           <%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
           <%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
+          <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
         </div>
       </div>
     </div>
