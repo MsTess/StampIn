@@ -1,17 +1,11 @@
 class BookmarkVisaResultsController < ApplicationController
-    def bookmark_visa_results
-        @bookmark_visa_results = current_user.bookmark_visa_results
-    end
 
     def create
         @bookmark_visa_result = BookmarkVisaResult.new(bookmark_visa_result_params)
         @bookmark_visa_result.user = current_user
-        #@bookmark_visa_result.visa_result = @visa_result
-
-        if @bookmark_visa_result.save
-            
+        if @bookmark_visa_result.save!
+            redirect_to visa_result_path(@bookmark_visa_result.visa_result)
         else
-
         end
     end
 
@@ -24,6 +18,6 @@ class BookmarkVisaResultsController < ApplicationController
     private
 
     def bookmark_visa_result_params
-        params.require(:bookmark_visa_result)
+        params.require(:bookmark_visa_result).permit(:visa_result_id)
     end
 end

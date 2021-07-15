@@ -12,6 +12,7 @@
           <h5 class="lead">Web Address: <i><%= @embassy.URL? ? @embassy.URL : "Web address not available" %></i></h5>
           <hr class="my-4">
           <h5 class="btn btn-dark"> <%= link_to "Google Maps", @embassy.URL, style:"text-decoration: none; color: white" %></h5>
+          <h5 class="btn btn-dark"> <%= link_to "Save", user_bookmark_embassies, style:"text-decoration: none; color: white" %></h5>
         </div>
       </div>
     </div>
