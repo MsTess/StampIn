@@ -1,10 +1,9 @@
 class EmbassiesController < ApplicationController
 def index
-  if params[:origin_country]
-    @embassies = Embassy.where(:origin_country => params[:origin_country])
-  else
-    false
-  end
+  @countries = Country.all
+  # raise
+    @embassies = Embassy.where(origin_country: params[:query][:origin_country]) if params[:query][:origin_country]
+    p '================', @embassies
 end
 
   def show
@@ -13,7 +12,7 @@ end
     @markers =
     {
       lat: @embassy.latitude,
-      lng: @embassy.longitude,
+      lng: @embassy.longitude
     }
   end
 end

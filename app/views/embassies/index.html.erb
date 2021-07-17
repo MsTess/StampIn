@@ -6,8 +6,8 @@
       <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
         <div class="card-body">
           <h6 class="card-title">Select Embassy Country</h6>
-          <%= simple_form_for(@embassies) do |f| %>
-            <%= f.input :origin_country, collection: @embassies %>
+          <%= simple_form_for :query, url: embassies_path, method: :get do |f| %>
+            <%= f.input :origin_country, collection: @countries %>
             <%= f.submit class: 'red_button'%>
           <% end %>
         </div>
