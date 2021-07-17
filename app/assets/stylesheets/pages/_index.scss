@@ -1,2 +1,12 @@
 // Import page-specific CSS files here.
 @import "home";
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 20px;
+}

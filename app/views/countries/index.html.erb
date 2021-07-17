@@ -1,13 +1,16 @@
 <div class="container py-5">
-<h1>Where do you want to go?</h1>
-  <div class="row">
+  <div class="row justify-content-center">
+  <h1>Where do you want to go?</h1>
+    <div>
+      <p>Travel planning with your international friends, made easy, no matter what country they're in.</p>
+    </div>
     <div class="col-6">
       <div class="bg-white rounded p-3 shadow">
         <div class="form">
           <%= simple_form_for(@visa_result) do |f| %>
-            <%= f.input :origin_country, collection: @countries %>
-            <%= f.input :destination_country, collection: @countries%>
-            <%= f.submit class: 'red_button'%>
+          <%= f.input :destination_country, collection: @countries%>
+          <%= f.input :origin_country, collection: @countries %>
+          <%= f.submit class: 'blue_button', value: 'Visa Info'%>
           <% end %>
         </div>
       </div>
