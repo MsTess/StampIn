@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :countries, only: [:index, :show]
 
-  get "users/:id/bookmarks", :to => "users#bookmarks"
+  get "users/:id/bookmarks", :to => "users#bookmarks", :as => "user_bookmarks"
   
  
   #get :visa_results_display, :to => "visa_results#visa_result_display"
