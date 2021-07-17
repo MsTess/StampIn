@@ -13,8 +13,12 @@
           <%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
         </div>
         <div class="row justify-content-center">
-        <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
+          <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
         </div>
+        <div class="row justify-content-center">
+          <%= link_to "Destination Country Information", country_path(@d_c), style:"text-decoration: none;" %>
+        </div>
+        <div class="row justify-content-center">
         <div class="row justify-content-center">
           <% if @embassies %>
             <% @embassies.each do |embassy| %>
