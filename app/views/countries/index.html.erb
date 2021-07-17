@@ -8,9 +8,9 @@
       <div class="bg-white rounded p-3 shadow">
         <div class="form">
           <%= simple_form_for(@visa_result) do |f| %>
-          <%= f.input :destination_country, collection: @countries%>
-          <%= f.input :origin_country, collection: @countries %>
-          <%= f.submit class: 'blue_button', value: 'Visa Info'%>
+          <%= f.input :destination_country, collection: @countries, label: 'Where do you want to go?' %>
+          <%= f.input :origin_country, collection: @countries, label: 'Where are you from?' %>
+          <%= f.submit class: 'blue_button', value: 'Visa Info' %>
           <% end %>
         </div>
       </div>
