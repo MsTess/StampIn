@@ -1,7 +1,7 @@
 class Embassy < ApplicationRecord
   has_many :bookmark_embassies
-  belongs_to :origin_country, class_name: "Country"
-  belongs_to :destination_country, class_name: "Country"
+  belongs_to :own_country, class_name: "Country"
+  belongs_to :host_country, class_name: "Country"
   # belongs_to :country
   # validates :Embassy_Of,
   #           :In_Country,
@@ -10,7 +10,7 @@ class Embassy < ApplicationRecord
   #           :Embassy_Consulate,
   #           :Address,
   #           :Address_link_GMaps, presence: true
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  # geocoded_by :address
+  # after_validation :geocode, if: :will_save_change_to_address?
 
 end
