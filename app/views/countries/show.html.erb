@@ -5,13 +5,13 @@
         <h2 class="display-4"><%= @country.name %></h2>
         <div class="form-container">
           <hr class="my-4">
-          <p class="lead">The capital of <%= @country.name.capitalize %> is <%= @country.capital %>, and the people characterize themselves as <%= @country.demonym %></p>
+          <p class="lead">The capital of <%= @country.name.capitalize %> is <%= @country.capital %>, and the people characterize themselves as <%= @country.demonym %>.</p>
           <h3 class="lead">Languages spoken in <i><%= @country.name %>:</i></h3>
           <p class="lead"><%= @country.languages %></p>
           <h3 class="lead">Official currency of <i><%= @country.name %>:</i></h3>
           <p class="lead"><%= @country.currencies %></p>
           <h3 class="lead">Flag of <i><%= @country.name %>:</i></h3>
-          <img class="lead" src=<% @country.flag %>>
+          <img class="lead" width="250px" src=<%= @country.flag %>>
           <h3 class="lead">Calling Code:</h3>
           <p class="lead"><%= @country.callingCodes %></p>
           <div id="map"
