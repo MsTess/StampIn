@@ -8,6 +8,8 @@ end
 
   def show
     @embassy = Embassy.find(params[:id])
+    @user = current_user
+    @embassy_bookmark = BookmarkEmbassy.new
 
     @markers =
     {

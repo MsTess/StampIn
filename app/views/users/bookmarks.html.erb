@@ -1,6 +1,30 @@
-<h1>Your visa requirements </h1>
-<% @bookmark_visa_results.each do |result|%>
-<%= result.visa_result.destination_country.name %><
-<%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
-<%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
-<% end %>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="bg-white rounded p-3 shadow">
+            <div class="visa_results_heading row justify-content-center">
+            <h1>Your saved visa results </h1>
+            </div> 
+            <div class="row justify-content-center">
+                <% @bookmark_visa_results.each do |result|%>
+                <h5><%= result.visa_result.destination_country.name %>:  </h5>
+                <h5> <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %></h5>
+                <h5> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %></h5>
+                <% end %>
+            </div> 
+
+            <div class="visa_results_heading row justify-content-center">
+            <h1>Your saved embassies </h1>
+            </div> 
+            
+            <% @bookmark_embassies.each do |result|%>
+            <h5>Embassy in <%= result.embassy.in_city %>:</h5>
+            <p>Address: <%= result.embassy.address %></p>
+            <p>URL: <%= result.embassy.url %></p>
+            <p>Email: <%= result.embassy.emails %></p>
+            <% end %>
+      </div> 
+    </div>
+  </div>
+</div>
+
