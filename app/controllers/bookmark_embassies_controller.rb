@@ -1,11 +1,13 @@
 class BookmarkEmbassiesController < ApplicationController
 
     def create
+        p bookmark_embassy_params
+        p bookmark_embassy_params
         @bookmark_embassy = BookmarkEmbassy.new(bookmark_embassy_params)
+        p @bookmark_embassy
         @bookmark_embassy.user = current_user
-        @bookmark_embassy.save
-        if @bookmark_embassy.save
-            redirect_to visa_result_path(@bookmark_embassy.visa_result)
+        if @bookmark_embassy.save!
+            redirect_to embassy_path(@bookmark_embassy.embassy)
         else
         end
     end
@@ -19,6 +21,6 @@ class BookmarkEmbassiesController < ApplicationController
     private
 
     def bookmark_embassy_params
-        params.require(:bookmark_embassy).permit[:embassy_id]
+        params.require(:bookmark_embassy).permit(:embassy_id)
     end
 end
