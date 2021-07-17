@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_114219) do
+ActiveRecord::Schema.define(version: 2021_07_13_121425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmark_embassies", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "embassy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["embassy_id"], name: "index_bookmark_embassies_on_embassy_id"
+    t.index ["user_id"], name: "index_bookmark_embassies_on_user_id"
+  end
+
+  create_table "bookmark_visa_results", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "visa_result_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookmark_visa_results_on_user_id"
+    t.index ["visa_result_id"], name: "index_bookmark_visa_results_on_visa_result_id"
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -31,13 +49,15 @@ ActiveRecord::Schema.define(version: 2021_07_13_114219) do
   end
 
   create_table "embassies", force: :cascade do |t|
-    t.string "in_city"
-    t.string "embassy_hijo_h3"
-    t.string "embassy_consulate"
-    t.string "address"
-    t.string "address_link_gmaps"
-    t.string "emails"
-    t.string "url"
+    t.string "Embassy_Of"
+    t.string "In_Country"
+    t.string "In_City"
+    t.string "Embassy_hijo_h3"
+    t.string "Embassy_Consulate"
+    t.string "Address"
+    t.string "Address_link_GMaps"
+    t.string "Emails"
+    t.string "URL"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "countries_id"
@@ -73,6 +93,10 @@ ActiveRecord::Schema.define(version: 2021_07_13_114219) do
     t.index ["origin_country_id"], name: "index_visa_results_on_origin_country_id"
   end
 
+  add_foreign_key "bookmark_embassies", "embassies"
+  add_foreign_key "bookmark_embassies", "users"
+  add_foreign_key "bookmark_visa_results", "users"
+  add_foreign_key "bookmark_visa_results", "visa_results"
   add_foreign_key "embassies", "countries", column: "countries_id"
   add_foreign_key "embassies", "countries", column: "destination_country_id"
   add_foreign_key "embassies", "countries", column: "origin_country_id"

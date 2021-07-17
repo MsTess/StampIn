@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "config/buttons";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -10,4 +11,13 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/blue_button";
 @import "pages/index";
+
+.main {
+    background-image: url("https://res.cloudinary.com/stampin/image/upload/o_15/v1626354248/stampinbackground.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+  }
