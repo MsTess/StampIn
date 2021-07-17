@@ -15,11 +15,10 @@
   &:hover {
     color: var(--charcoal);
     text-decoration: none;
-    background-color: #5fdcf5;
-    transition: .5s;
-    box-border: 5px;
-    box-shadow: inset 6.5em 0 0 0 var(--hover);
-    text-shadow: .1px .1px;
+    background-color: white;
+    transition: .2s ease;
+    text-shadow: .07px .07px;
+    border: .5px solid var(--blue)
   }
 }
 
