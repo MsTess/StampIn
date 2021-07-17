@@ -3,7 +3,7 @@ require 'open-uri'
 
 url = "https://restcountries.eu/rest/v2/all"
 
-# Country.destroy_all
+Country.destroy_all
 country_serialized = URI.open(url).read
 countries = JSON.parse(country_serialized)
 countries.each {|country|
@@ -49,12 +49,12 @@ countries.each {|country|
     # emails = []
     # embassy["Emails"].each {|em|
     #   emails << em}
-  origin_country = Country.find_by(alpha2code: embassy["node"]["Embassy_of_code_country"])
-  destination_country = Country.find_by(alpha2code: embassy["node"]["In_Country_code_country"])
-  next if origin_country.blank? || destination_country.blank?
+  own_country = Country.find_by(alpha2code: embassy["node"]["Embassy_of_code_country"])
+  host_country = Country.find_by(alpha2code: embassy["node"]["In_Country_code_country"])
+  next if own_country.blank? || host_country.blank?
     e = Embassy.create!(
-      origin_country: origin_country,
-      destination_country: destination_country,
+      own_country: own_country,
+      host_country: host_country,
       in_city: embassy["node"]["in_City"],
       embassy_hijo_h3:embassy["node"]["Embassy_Consulate"],
       embassy_consulate:embassy["node"]["Embassy_Consulate"],
@@ -62,7 +62,7 @@ countries.each {|country|
       address_link_gmaps:embassy["node"]["Address_link_GMaps"],
       emails:embassy["node"]["Emails"],
       url:embassy["node"]["URLs"])
-    puts "Created embassy of #{e.origin_country.name} in #{e.in_city}"
+    puts "Created embassy of #{e.own_country.name} in #{e.in_city}"
 
   }
 }

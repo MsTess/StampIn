@@ -36,5 +36,7 @@ class VisaResultsController < ApplicationController
       @o_c = @visa_result.origin_country
       @user = current_user
       @visa_result_bookmark = BookmarkVisaResult.new
+      p @d_c.id, @o_c.id
+      @embassies = Embassy.where(own_country: @d_c, host_country: @o_c)
     end
 end

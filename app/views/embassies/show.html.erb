@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-6">
       <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
-        <h2 class="display-4">Embassy of <%= @embassy.origin_country.name %>, <%= @embassy.in_city %>, <%= @embassy.destination_country.name %></h1>
+        <h2 class="display-4">Embassy of <%= @embassy.own_country.name %>, <%= @embassy.in_city %>, <%= @embassy.host_country.name %></h1>
         <div class="form-container">
           <hr class="my-4">
           <h6 class="lead">Street Address: <i><%= @embassy.address %></i></h6>
@@ -22,6 +22,3 @@
     </div>
   </div>
 </div>
-
-
-<h1>My bookmarked countries and embassies</h1>
