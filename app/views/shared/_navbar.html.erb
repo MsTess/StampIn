@@ -2,7 +2,9 @@
   <div class="logo">
 <!--     <i class="fa fa-suitcase" aria-hidden="true"></i>
  -->
-   <%= image_tag "long_logo.png"%>
+    <%= link_to countries_path do %>
+      <%= image_tag "long_logo.png" %>
+    <% end %>
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +15,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active" id="navbarSearch">
-          <%= link_to "Search", "#", class: "nav-link" %>
+          <%= link_to "Search", countries_path, class: "nav-link" %>
 
         <li class="nav-item active" id="navbarBookmarks">
           <%= link_to "My Bookmarks", "#", class: "nav-link" %>
