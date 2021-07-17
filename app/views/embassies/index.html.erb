@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="container">
+    <h1>Embassies</h1>
+    <div class="row" >
+      <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
+        <div class="card-body">
+          <h6 class="card-title">Select Embassy Country</h6>
+          <%= simple_form_for :query, url: embassies_path, method: :get do |f| %>
+            <%= f.input :origin_country, collection: @countries %>
+            <%= f.submit class: 'red_button'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+
+    <% if @embassies %>
+      <% @embassies.each do |embassy| %>
+        <%= link_to embassy, style:"text-decoration: none; color: black" do %>
+        <div class="col mt-3">
+            <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
+              <div class="card-body">
+                <h6 class="card-title">Embassy of <%= embassy.origin_country.name %>, in <%= embassy.in_city %>, <%= embassy.destination_country.name %></h6>
+                <h5 class="btn btn-dark"> <%= link_to "View information", embassy_path(embassy), style:"text-decoration: none; color: white" %></h5>
+              </div>
+            </div>
+        </div>
+        <% end %>
+      <% end %>
+    <% else %>
+            <div class="col mt-3">
+            <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
+              <div class="card-body">
+                <h6 class="card-title">Please select an embassy from the dropdown menu!</h6>
+              </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+  </div>
+ </div>

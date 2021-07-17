@@ -33,6 +33,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
 import { initMapbox } from './map';
 
 document.addEventListener('turbolinks:load', () => {
