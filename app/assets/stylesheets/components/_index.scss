@@ -12,3 +12,31 @@ h1 {
   font-weight: 200;
 }
 
+.round_border {
+  border: 1px;
+  border: solid;
+  border-radius: 18px;
+  padding: 6px;
+  color:#f3402d;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1); 
+  font-size: larger;
+}
+
+.gray_link {
+  padding-left: 36px;
+  padding-bottom: 36px;
+  color: gray;
+}
+
+.gray_link:hover{
+  padding-left: 36px;
+  padding-bottom: 36px;
+  color: rgb(102, 101, 101);
+}
+
+.fa, .fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-top: 4px;
+  padding-left: 4px;
+}
