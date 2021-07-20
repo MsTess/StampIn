@@ -14,10 +14,10 @@ const buildMap = (mapElement) => {
 const addMarkersToMap = (map, markers) => {
   const geoCode = Object.values(markers);
  console.log(geoCode);
- const popup = new mapboxgl.Popup().setHTML(geoCode[2]);
+ // const popup = new mapboxgl.Popup().setHTML(geoCode[2]);
     new mapboxgl.Marker()
       .setLngLat([ geoCode[1], geoCode[0] ])
-      .setPopup(popup) // add this
+      // .setPopup(popup) // add this
       .addTo(map);
 };
 
@@ -26,7 +26,7 @@ const fitMapToMarkers = (map, markers) => {
   console.log(geoCode)
   const bounds = new mapboxgl.LngLatBounds();
   bounds.extend([ geoCode[1], geoCode[0] ]);
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 50, maxZoom: 15 });
 };
 
 const initMapbox = () => {
