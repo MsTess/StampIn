@@ -16,7 +16,7 @@
           <p class="lead"><%= @country.callingCodes %></p>
           <div id="map"
             style="width: 100%; height: 600px;"
-            data-markers=<% @country.latlng %>
+            data-markers="<%= @markers.to_json %>"
             >
           </div>
         </div>
