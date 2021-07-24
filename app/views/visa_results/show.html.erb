@@ -23,31 +23,25 @@
         </div>
       </div>
       <div class="grid-container">
-        <% if @embassies %>
-          <% @embassies.each do |embassy| %>
+        <% if @embassies.empty? %>
+          <div class="row justify-content-left">
+            <h6 class="gray_text"> No embassies found!</h6>
+          </div>
+        <% else %>
+            <% @embassies.each do |embassy| %>
             <%= link_to embassy, style:"text-decoration: none; color: black" do %>
               <div class="justify-content-center">
-                <%# <div class="col"> %>
-                  <div class="round_border_gray">
-                    <h6>Embassy of <%= embassy.own_country.name %>, in <%= embassy.in_city %>, <%= embassy.host_country.name %></h6>
-                  </div>
-                <%# </div> %>
+                <div class="round_border_gray">
+                  <h6>Embassy of <%= embassy.own_country.name %> in <%= embassy.in_city %>, <%= embassy.host_country.name %></h6>
+                </div>
               </div>
             <% end %>
           <% end %>
-        <% else %>
-          <div class="col m-3 p-3">
-            <div class="row justify-content-left">
-              <h6 class="card-title">No embassies found!</h6>
-            </div>
-          </div>
         <% end %>
+        <div class="row justify-content-center padding-top">
+          <%= link_to "Bookmark Visa Result", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;", class:"blue-button-modified" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="row justify-content-center">
-  <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
 </div>

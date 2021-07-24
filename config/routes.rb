@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   resources :embassies, only: [:index, :show]
 
 
-  delete "/bookmark_visa_results/:id", :to => "bookmark_visa_results#destroy"
-  delete "/bookmark_embassies/:id", :to => "bookmark_embassies#destroy"
+  delete "/bookmark_visa_results/:id", :to => "bookmark_visa_results#destroy", :as => "delete_visa_result_bookmark"
+  delete "/bookmark_embassies/:id", :to => "bookmark_embassies#destroy", :as => "delete_embassy_bookmark"
 end
