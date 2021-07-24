@@ -13,3 +13,81 @@ h1 {
   font-weight: 200;
 }
 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.round_border_red {
+  border: 1px;
+  border: solid;
+  border-radius: 18px;
+  padding: 6px;
+  color:#f3402d;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1); 
+  font-size: larger;
+}
+
+.gray_link {
+  padding-left: 20px;
+  padding-bottom: 36px;
+  color: gray;
+}
+
+.gray_link:hover{
+  padding-left: 20px;
+  padding-bottom: 36px;
+  color: #1F1F1F;
+  transition-duration: 0.5s;
+}
+
+.fa, .fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
+.round_border_gray:hover {
+  border: 0.5px solid #f32d2d;
+  border-radius: 12px;
+  padding: 12px 6px;
+  justify-content: center;
+  font-size: small;
+  text-align: center;
+  margin: 18px 36px;
+  min-width: 200px;
+  min-height: 110px;
+  text-align: center;
+  background-color: #f3412d;
+  transition-duration: 1s;
+}
+
+.round_border_gray {
+  border: 0.5px solid gray;
+  border-radius: 12px;
+  padding: 12px 6px;
+  font-size: small;
+  text-align: center;
+  margin: 18px 36px;
+  min-width: 200px;
+  min-height: 110px;
+  text-align: center;
+}
+
+.round_border_gray h6 {
+  color: rgb(102, 101, 101);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.round_border_gray:hover h6 {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}

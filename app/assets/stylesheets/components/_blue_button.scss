@@ -21,3 +21,23 @@
     border: .5px solid var(--blue)
   }
 }
+
+.black_button {
+  color: white;
+  background-color: black;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: smaller;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    color: white;
+    background-color: rgb(41, 40, 40);
+    padding: 12px;
+    border-radius: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: smaller;
+    letter-spacing: 0.5px;
+  }
+}
