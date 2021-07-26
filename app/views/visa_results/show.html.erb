@@ -1,57 +1,58 @@
-<div class="container py-5">
+<div class="container">
   <div class="row justify-content-center">
-    <div>
-      <p>Click on the link below for further information regarding visa requirements.</p>
-    </div>
-    <div class="col-6">
-      <div class="bg-white rounded p-3 shadow">
-        <div class="visa_results_heading">
-        <h3>Your visa requirements for <%= @d_c.name %>...</h3>
-        </div>
+    <div class="col-10 col-lg-10 col-sm-6">
+      <div>
+        <p>Click on the link below for further information regarding visa requirements.</p>
+      </div>
+<!--       <div class="col-6"> -->
+        <div class="bg-white rounded p-3 shadow">
+          <div class="visa_results_heading">
+          <h3>Your visa requirements for <%= @d_c.name %>...</h3>
+          </div>
 
-        <hr class="my-4">
-        <div class="row justify-content-center">
-          <%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
-          <%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
-        </div>
-        <div class="row justify-content-center">
-          <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
-        </div>
-        <div class="row justify-content-center">
-          <%= link_to "Find out more about your destination", country_path(@d_c), style:"text-decoration: none;" %>
-        </div>
-        <% if @embassies %>
-            <% @embassies.each do |embassy| %>
-              <%= link_to embassy, style:"text-decoration: none; color: black" do %>
-                <div class="col mt-3">
-                  <div class="row justify-content-center">
-                    <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
-                      <div class="card-body">
-                        <h6 class="card-title">Embassy of <%= embassy.own_country.name %>, in <%= embassy.in_city %>, <%= embassy.host_country.name %></h6>
-                        <div class="row justify-content-center">
-                         <h5 class="blue_button"> <%= link_to "View information", embassy_path(embassy), style:"text-decoration: none; color: black" %></h5>
+          <hr class="my-4">
+          <div class="row justify-content-center">
+            <%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
+            <%= @visa_result.evisa_modality.capitalize.gsub(/_/,' ') %>
+          </div>
+          <div class="row justify-content-center">
+            <%= link_to "Save", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
+          </div>
+          <div class="row justify-content-center">
+            <%= link_to "Find out more about your destination", country_path(@d_c), style:"text-decoration: none;" %>
+          </div>
+          <% if @embassies %>
+              <% @embassies.each do |embassy| %>
+                <%= link_to embassy, style:"text-decoration: none; color: black" do %>
+                  <div class="col mt-3">
+                    <div class="row justify-content-center">
+                      <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
+                        <div class="card-body">
+                          <h6 class="card-title">Embassy of <%= embassy.own_country.name %>, in <%= embassy.in_city %>, <%= embassy.host_country.name %></h6>
+                          <div class="row justify-content-center">
+                           <h5 class="blue_button"> <%= link_to "View information", embassy_path(embassy), style:"text-decoration: none; color: black" %></h5>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                  </div>
                 </div>
-              </div>
+                <% end %>
               <% end %>
-            <% end %>
-          <% else %>
-            <div class="col mt-3">
-              <div class="row justify-content-center">
-                <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
-                  <div class="card-body">
-                    <h6 class="card-title">No embassies found!</h6>
+            <% else %>
+              <div class="col mt-3">
+                <div class="row justify-content-center">
+                  <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
+                    <div class="card-body">
+                      <h6 class="card-title">No embassies found!</h6>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-<!--           <%= link_to "Embassy Information", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
- -->
+            <% end %>
+  <!--           <%= link_to "Embassy Information", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;" %>
+   -->
+        </div>
       </div>
     </div>
   </div>
 </div>
-
