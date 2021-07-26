@@ -1,18 +1,46 @@
-<div class="container py-5">
+<div class="container">
   <div class="row justify-content-center">
-  <h1>Travel Visa Information   <i class="fa fa-plane" aria-hidden="true"></i></h1>
-    <div id="site_info">
-      <p>Some travel plans require a visa. StampIn tells you what you need to know.</p>
-    </div>
-    <div class="col-6">
-      <div class="bg-white rounded p-3 shadow">
-        <div class="form">
-          <%= simple_form_for(@visa_result) do |f| %>
-          <%= f.input :origin_country, collection: @countries, label: 'Where are you from?' %>
-          <%= f.input :destination_country, collection: @countries, label: 'Where do you want to go?' %>
-          <%= f.submit "Get Visa Info", class: 'blue_button' %>
-          <% end %>
+    <div class="col-10 col-lg-10 col-sm-6">
+      <h1>Travel Visa Information   <i class="fa fa-plane" aria-hidden="true"></i></h1>
+              <div id="site_info">
+                <p>Some travel plans require a visa. Answer the questions below to ensure that your trip goes as smoothly as possible.</p>
+              </div>
+<!--               <div class="col-6"> -->
+                <div class="bg-white rounded p-3 shadow">
+                  <div class="form">
+                    <%= simple_form_for(@visa_result) do |f| %>
+                    <%= f.input :destination_country, collection: @countries, label: 'Where do you want to go?' %>
+                    <%= f.input :origin_country, collection: @countries, label: 'Where are you from?' %>
+                    <%= f.submit "Get Visa Info", class: 'blue_button' %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
+
+        <br>
+
+      <div class="container">
+
+        <h2>Frequently Asked Questions:</h2>
+        <hr>
+        <h3>What are the benefits of creating a StampIn account?</h3>
+        <p>StampIn not only allows you to save and keep track of any visas you might need for your travels, but also helps you save and keep a record of any embassies you need. </p>
+        <h3>What is a travel visa?</h3>
+        <p id="visa_def">A travel visa gives you permission to visit a foreign country for a certain time period and lets the authorities know what you want to do on your visit. A visa can come in forms such as stamps, stickers, or papers.</p>
+        <!-- maybe add link to external definition -->
+        <h3>Who needs a travel visa?</h3>
+        <p>Depending on your country of origin and your destination, it is possible that you need a visa every time you enter a foreign country. StampIn allows you to check this information. Who needs a visa can also change depending on global and current events, such as a pandemic. Even if you have traveled to a country without a visa before, it is always best to check ahead of time to ensure smooth travels.</p>
+        <h3>What does "No Visa Required" mean?</h3>
+        <p></p>
+        <h3>What does "Visa Required" mean?</h3>
+        <p></p>
+        <h3>What does "Visa On Arrival" mean?</h3>
+        <p></p>
+        <h3>What is an e-visa?</h3>
+        <p></p>
+
       </div>
     </div>
   </div>
@@ -103,37 +131,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="container">
-  <h2>Frequently Asked Questions:</h2>
-  <div class="FAQcontent">
-    <hr>
-    <h4>What are the benefits of creating a StampIn account?</h4>
-    <p>StampIn not only allows you to save and keep track of any visas you might need for your travels, but also helps you save and keep a record of any embassies you need. </p>
-    <h4>What is a travel visa?</h4>
-    <p id="visa_def">A travel visa gives you permission to visit a foreign country for a certain time period and lets the authorities know what you want to do on your visit. A visa can come in forms such as stamps, stickers, or papers.</p> -->
-    <!-- maybe add link to external definition -->
-<!--     <h4>Who needs a travel visa?</h4>
-    <p>Depending on your country of origin and your destination, it is possible that you need a visa every time you enter a foreign country. StampIn allows you to check this information. Who needs a visa can also change depending on global and current events, such as a pandemic. Even if you have traveled to a country without a visa before, it is always best to check ahead of time to ensure smooth travels.</p>
-    <h4>What does "No Visa Required" mean?</h4>
-    <p>This means that your chosen destination does not require you to have any special permissions to enter apart from a valid passport for a given time period. However, it is important to note that most countries want to see proof that you plan to leave at some point. Therefore, ‘No Visa Required’ for most countries, means you should have the following:
-      <br>
-      <br>
-        • A passport that is valid for 6 months past the date that you enter the country
-        <br>
-        • This passport must have at least one blank page
-        <br>
-        • Proof of sufficient funds
-        <br>
-        • Proof of onward or return flights
-        <br>
-        • All documents required for your next destination
-    </p>
-    <h4>What does 'Visa Required' mean?</h4>
-    <p>'Visa Required' means that you must have special permission from a government to enter a country that is not your own, and is usually inserted into your passport in some manner. A visa is a document issued by a government to foreign visitors, providing them with legal entry into a that is not the visitor's own country. Visa requirements vary depending on country of origin, the destination country and occasionally a visitor's travel history.</p>
-    <h4>What does 'Visa on Arrival' mean?</h4>
-    <p>'Visa on Arrival' means that travelers must obtain a visa in order to enter the destination country, but it can be obtained upon arrival. Visitors do not need to apply for a travel visa beforehand. Visa required means that travellers must apply for a visa to the country before actually travelling there.</p>
-    <h4>What is an e-visa?</h4>
-    <p>'E-visa' is an abbreviation for 'electronic visa'. It is a visa that you can apply for on your own through a designated visa website. E-visas give a traveler permission to enter a country, just like other travel visas. The only difference is that applications can be completed online.</p>
-  </div>
-</div> -->
