@@ -1,6 +1,6 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-6">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
       <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
         <h2 class="display-4"><img class="lead" width="75px" src=<%= @country.flag %>>  <%= @country.name %></h2>
         <div class="form-container">
@@ -13,12 +13,16 @@
         </div>
       </div>
     </div>
-    <div class="col-6 shadow border border-light align-middle">
-          <div id="map"
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+    <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
+      <div id="map"
             style="width: 100%; height: 100%;"
             data-markers="<%= @markers.to_json %>"
             >
-          </div>
+      </div>
     </div>
+  </div>
   </div>
 </div>
