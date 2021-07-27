@@ -20,7 +20,7 @@
           <hr class="my-4">
           <% end %>
           <div class="row justify-content-center">
-          <%= link_to "Bookmark Embassy", user_bookmark_embassies_path(@user, bookmark_embassy: {embassy_id: @embassy.id}), method: :post, style:"text-decoration: none;", class: "blue-button-modified" %>
+          <%= link_to "Bookmark Embassy", user_bookmark_embassies_path(@user, bookmark_embassy: {embassy_id: @embassy.id}), method: :post, style:"text-decoration: none;", class: "blue-button-modified", id: "save-bookmark" %>
           </div>
         </div>
       </div>
@@ -34,3 +34,10 @@
     </div>
   </div>
 </div>
+
+<script>
+const save_bookmark = document.getElementById("save-bookmark");
+save_bookmark.addEventListener("click", (event) => {
+  alert("The bookmark saved!");
+});
+</script>

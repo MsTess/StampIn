@@ -1,11 +1,14 @@
 class BookmarkEmbassiesController < ApplicationController
 
     def create
-        p bookmark_embassy_params
-        p bookmark_embassy_params
         @bookmark_embassy = BookmarkEmbassy.new(bookmark_embassy_params)
-        p @bookmark_embassy
         @bookmark_embassy.user = current_user
+        BookmarkEmbassy.all.each do |be|
+            if (be.embassy_id == @bookmark_embassy.embassy_id)
+                redirect_to embassy_path(@bookmark_embassy.embassy)
+                return
+            end
+        end
         if @bookmark_embassy.save!
             redirect_to embassy_path(@bookmark_embassy.embassy)
         else
