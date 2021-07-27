@@ -10,6 +10,8 @@ end
     @embassy = Embassy.find(params[:id])
     @user = current_user
     @embassy_bookmark = BookmarkEmbassy.new
+    p @embassy.latitude
+    p @embassy.longitude
 
     @markers =
     {
