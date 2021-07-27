@@ -33,7 +33,7 @@
             <%= link_to embassy, style:"text-decoration: none; color: black" do %>
               <div class="justify-content-center">
                 <div class="round_border_gray">
-                  <h6>Embassy of <%= embassy.own_country.name %> in <%= embassy.in_city %>, <%= embassy.host_country.name %></h6>
+                  <h6><%= embassy.embassy_consulate %> of <%= embassy.own_country.name %> in <%= embassy.in_city %>, <%= embassy.host_country.name %></h6>
                 </div>
               </div>
             <% end %>

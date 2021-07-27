@@ -33,6 +33,7 @@ countries.each {|country|
 
 #     c_lowercase = country.name.downcase.gsub(" ", "-").gsub(/[^\x00-\x7F]/, 'a')
 
+
 #   postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
 
 #   # Embassy.destroy_all
@@ -68,6 +69,9 @@ countries.each {|country|
 # }
 
 postman_url = "https://onlinevisa.com/page-data/embassies/united-kingdom/page-data.json"
+
+  # postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
+
 
   # Embassy.destroy_all
   begin
