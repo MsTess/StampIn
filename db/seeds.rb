@@ -29,17 +29,87 @@ countries.each {|country|
         puts "Created: #{c.name}"
       }
 
-  Country.all.each { |country|
+#   Country.all.each { |country|
 
-    c_lowercase = country.name.downcase.gsub(" ", "-").gsub(/[^\x00-\x7F]/, 'a')
+#     c_lowercase = country.name.downcase.gsub(" ", "-").gsub(/[^\x00-\x7F]/, 'a')
 
-  postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
+
+#   postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
+
+#   # Embassy.destroy_all
+#   begin
+#     response = RestClient.get(postman_url)
+#   rescue RestClient::ExceptionWithResponse => err
+#     puts "404, #{c_lowercase} embassies not created"
+#     next
+#   end
+#   next if response.blank?
+#   embassies = JSON.parse(response)
+#   embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
+#   embassies.each {|embassy|
+#     # emails = []
+#     # embassy["Emails"].each {|em|
+#     #   emails << em}
+#   own_country = Country.find_by(alpha2code: embassy["node"]["Embassy_of_code_country"])
+#   host_country = Country.find_by(alpha2code: embassy["node"]["In_Country_code_country"])
+#   next if own_country.blank? || host_country.blank?
+#     e = Embassy.create!(
+#       own_country: own_country,
+#       host_country: host_country,
+#       in_city: embassy["node"]["in_City"],
+#       embassy_hijo_h3:embassy["node"]["Embassy_Consulate"],
+#       embassy_consulate:embassy["node"]["Embassy_Consulate"],
+#       address:embassy["node"]["Address"],
+#       address_link_gmaps:embassy["node"]["Address_link_GMaps"],
+#       emails:embassy["node"]["Emails"],
+#       url:embassy["node"]["URLs"])
+#     puts "Created embassy of #{e.own_country.name} in #{e.in_city}"
+
+#   }
+# }
+
+postman_url = "https://onlinevisa.com/page-data/embassies/united-kingdom/page-data.json"
+
+  # postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
+
 
   # Embassy.destroy_all
   begin
     response = RestClient.get(postman_url)
   rescue RestClient::ExceptionWithResponse => err
-    puts "404, #{c_lowercase} embassies not created"
+    puts "404, UK embassies not created"
+    next
+  end
+  next if response.blank?
+  embassies = JSON.parse(response)
+  embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
+  embassies.each {|embassy|
+    # emails = []
+    # embassy["Emails"].each {|em|
+    #   emails << em}
+  own_country = Country.find_by(alpha2code: embassy["node"]["Embassy_of_code_country"])
+  host_country = Country.find_by(alpha2code: embassy["node"]["In_Country_code_country"])
+  next if own_country.blank? || host_country.blank?
+    e = Embassy.create!(
+      own_country: own_country,
+      host_country: host_country,
+      in_city: embassy["node"]["in_City"],
+      embassy_hijo_h3:embassy["node"]["Embassy_Consulate"],
+      embassy_consulate:embassy["node"]["Embassy_Consulate"],
+      address:embassy["node"]["Address"],
+      address_link_gmaps:embassy["node"]["Address_link_GMaps"],
+      emails:embassy["node"]["Emails"],
+      url:embassy["node"]["URLs"])
+    puts "Created embassy of #{e.own_country.name} in #{e.in_city}"
+  }
+
+  postman_url = "https://onlinevisa.com/page-data/embassies/united-states/page-data.json"
+
+  # Embassy.destroy_all
+  begin
+    response = RestClient.get(postman_url)
+  rescue RestClient::ExceptionWithResponse => err
+    puts "404, US embassies not created"
     next
   end
   next if response.blank?
@@ -64,5 +134,37 @@ countries.each {|country|
       url:embassy["node"]["URLs"])
     puts "Created embassy of #{e.own_country.name} in #{e.in_city}"
 
-  }
+}
+
+  postman_url = "https://onlinevisa.com/page-data/embassies/russia/page-data.json"
+
+  # Embassy.destroy_all
+  begin
+    response = RestClient.get(postman_url)
+  rescue RestClient::ExceptionWithResponse => err
+    puts "404, Russian embassies not created"
+    next
+  end
+  next if response.blank?
+  embassies = JSON.parse(response)
+  embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
+  embassies.each {|embassy|
+    # emails = []
+    # embassy["Emails"].each {|em|
+    #   emails << em}
+  own_country = Country.find_by(alpha2code: embassy["node"]["Embassy_of_code_country"])
+  host_country = Country.find_by(alpha2code: embassy["node"]["In_Country_code_country"])
+  next if own_country.blank? || host_country.blank?
+    e = Embassy.create!(
+      own_country: own_country,
+      host_country: host_country,
+      in_city: embassy["node"]["in_City"],
+      embassy_hijo_h3:embassy["node"]["Embassy_Consulate"],
+      embassy_consulate:embassy["node"]["Embassy_Consulate"],
+      address:embassy["node"]["Address"],
+      address_link_gmaps:embassy["node"]["Address_link_GMaps"],
+      emails:embassy["node"]["Emails"],
+      url:embassy["node"]["URLs"])
+    puts "Created embassy of #{e.own_country.name} in #{e.in_city}"
+
 }

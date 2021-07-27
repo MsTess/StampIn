@@ -3,10 +3,10 @@
     <div class="col-10 col-lg-10 col-sm-10">
       <h1>Travel Visa Information   <i class="fa fa-plane" aria-hidden="true"></i></h1>
               <div id="site_info">
-                <p>Some travel plans require a visa. Answer the questions below to ensure that your trip goes as smoothly as possible.</p>
+                <p>Some travel plans require a visa. Use StampIn to find out which one you need and get more stamps in your passport.</p>
               </div>
 <!--               <div class="col-6"> -->
-                <div class="bg-white rounded p-3 shadow">
+                <div class="bg rounded p-3 shadow-lg" id="search">
                   <div class="form">
                     <%= simple_form_for(@visa_result) do |f| %>
                     <%= f.input :origin_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where are you from?'%>
@@ -18,33 +18,7 @@
               </div>
             </div>
         </div>
-
-        <br>
-
-      <div class="container">
-
-        <h2>Frequently Asked Questions:</h2>
-        <hr>
-        <h3>What are the benefits of creating a StampIn account?</h3>
-        <p>StampIn not only allows you to save and keep track of any visas you might need for your travels, but also helps you save and keep a record of any embassies you need. </p>
-        <h3>What is a travel visa?</h3>
-        <p id="visa_def">A travel visa gives you permission to visit a foreign country for a certain time period and lets the authorities know what you want to do on your visit. A visa can come in forms such as stamps, stickers, or papers.</p>
-        <!-- maybe add link to external definition -->
-        <h3>Who needs a travel visa?</h3>
-        <p>Depending on your country of origin and your destination, it is possible that you need a visa every time you enter a foreign country. StampIn allows you to check this information. Who needs a visa can also change depending on global and current events, such as a pandemic. Even if you have traveled to a country without a visa before, it is always best to check ahead of time to ensure smooth travels.</p>
-        <h3>What does "No Visa Required" mean?</h3>
-        <p></p>
-        <h3>What does "Visa Required" mean?</h3>
-        <p></p>
-        <h3>What does "Visa On Arrival" mean?</h3>
-        <p></p>
-        <h3>What is an e-visa?</h3>
-        <p></p>
-
-      </div>
-    </div>
-  </div>
-</div>
+<br>
 <br>
 <div class="container">
     <div id="accordion">
@@ -56,14 +30,22 @@
                     </button>
                  </h5>
             </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body" id="child1">
+                    <div class="card">
+                      <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-target="#collapseOneAA"><h4>What is StampIn?</h4></a>
+                        </div>
+                        <div class="card-body collapse" data-parent="#child1" id="collapseOneAA">
+                          <p>StampIn is a travel visa search engine that allows you to search and save any visa requirements and embassies you might need to make sure your trips go smoothly. StampIn's website also features embassy contact and location information, as well as a brief profile on your chosen destination.</p>
+                        </div>
+                    </div>
                     <div class="card">
                       <div class="card-header">
                         <a href="#" data-toggle="collapse" data-target="#collapseOneA"><h4>What are the benefits of creating a StampIn account?</h4></a>
                         </div>
                         <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                          <p>StampIn not only allows you to save and keep track of any visas you might need for your travels, but also helps you save and keep a record of any embassies you need. </p>
+                          <p>StampIn lets you bookmark your travel visa requirements, in addition to any embassies you might need. </p>
                         </div>
                     </div>
                     <div class="card">
@@ -71,7 +53,7 @@
                         <a href="#" data-toggle="collapse" data-target="#collapseOneB"><h4>What is a travel visa?</h4></a>
                         </div>
                         <div class="card-body collapse" data-parent="#child1" id="collapseOneB">
-                          <p id="visa_def">A travel visa gives you permission to visit a foreign country for a certain time period and lets the authorities know what you want to do on your visit. A visa can come in forms such as stamps, stickers, or papers.</p>
+                          <p id="visa_def">A travel visa gives you permission to visit a foreign country for a certain time period and lets the authorities know what you want to do on your visit. A visa can come in many forms, such as stamps, stickers, or papers.</p>
                         </div>
                     </div>
                     <div class="card">
