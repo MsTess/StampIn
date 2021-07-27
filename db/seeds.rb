@@ -68,19 +68,14 @@ countries.each {|country|
   }
 }
 
-postman_url = "https://onlinevisa.com/page-data/embassies/united-kingdom/page-data.json"
+uk_url = "https://onlinevisa.com/page-data/embassies/united-kingdom/page-data.json"
 
   # postman_url = "https://onlinevisa.com/page-data/embassies/#{c_lowercase}/page-data.json"
 
 
   # Embassy.destroy_all
-  begin
-    response = RestClient.get(postman_url)
-  rescue RestClient::ExceptionWithResponse => err
-    puts "404, UK embassies not created"
-    next
-  end
-  next if response.blank?
+
+    response = RestClient.get(uk_url)
   embassies = JSON.parse(response)
   embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
   embassies.each {|embassy|
@@ -103,16 +98,11 @@ postman_url = "https://onlinevisa.com/page-data/embassies/united-kingdom/page-da
     puts "Created embassy of #{e.own_country.name} in #{e.in_city}"
   }
 
-  postman_url = "https://onlinevisa.com/page-data/embassies/united-states/page-data.json"
+  usa_url = "https://onlinevisa.com/page-data/embassies/united-states/page-data.json"
 
   # Embassy.destroy_all
-  begin
-    response = RestClient.get(postman_url)
-  rescue RestClient::ExceptionWithResponse => err
-    puts "404, US embassies not created"
-    next
-  end
-  next if response.blank?
+
+    response = RestClient.get(usa_url)
   embassies = JSON.parse(response)
   embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
   embassies.each {|embassy|
@@ -136,16 +126,11 @@ postman_url = "https://onlinevisa.com/page-data/embassies/united-kingdom/page-da
 
 }
 
-  postman_url = "https://onlinevisa.com/page-data/embassies/russia/page-data.json"
+  russia_url = "https://onlinevisa.com/page-data/embassies/russia/page-data.json"
 
   # Embassy.destroy_all
-  begin
-    response = RestClient.get(postman_url)
-  rescue RestClient::ExceptionWithResponse => err
-    puts "404, Russian embassies not created"
-    next
-  end
-  next if response.blank?
+
+    response = RestClient.get(russia_url)
   embassies = JSON.parse(response)
   embassies = embassies["result"]["data"]["allScrapingCsv"]["edges"]
   embassies.each {|embassy|
