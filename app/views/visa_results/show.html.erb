@@ -1,18 +1,19 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10 col-lg-10 col-sm-10">
-    <div class="bg-white rounded p-5 shadow">
+    <div class="rounded p-5 shadow-lg" id="results">
       <div class="visa_results_heading">
         <div class="row justify-content-center">
-          <h3>Visa from <%= @o_c.name %> to <%= @d_c.name %></h3>
+          <h3 class="title">Visa from <%= @o_c.name %> to <%= @d_c.name %></h3>
           <div class="globe">
             <i class="fas fa-globe-americas"></i>
           </div>
+          <div class="row justify-content-center">
+          <%= link_to "Click to find out more about your destination", country_path(@d_c), style:"text-decoration: none;", class:"gray_link", id:"profile" %>
+          </div>
         </div>
         <hr class="my-4">
-        <div class="row justify-content-center">
-          <%= link_to "Find out more about your destination", country_path(@d_c), style:"text-decoration: none;", class:"gray_link", id:"profile" %>
-        </div>
+
         <div class="row justify-content-center">
           <div class="round_border_red">
             <%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
@@ -22,11 +23,9 @@
       </div>
       <div class="visa_results_heading">
         <div class="row justify-content-left">
-          <h5 class="p-4">View embassy information:</h5>
+          <h5 id="select">Select your embassy:</h5>
         </div>
       </div>
-
-
       <div class="grid-container">
         <% if @embassies.empty? %>
           <div class="row justify-content-left">
@@ -43,10 +42,8 @@
             <% end %>
           <% end %>
         <% end %>
-
-
-        <div class="row justify-content-center padding-top">
-          <%= link_to "Bookmark Visa Result", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;", class:"blue-button-modified", id:"save-bookmark" %>
+        <div class="row justify-content-center" id="bookmark">
+          <%= link_to "Bookmark This Search", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;", class:"blue-button-modified", id:"save-bookmark" %>
         </div>
       </div>
     </div>

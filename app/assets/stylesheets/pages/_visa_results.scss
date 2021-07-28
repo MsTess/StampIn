@@ -5,7 +5,7 @@
 }
 
 #profile {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .blue-button-modified {
@@ -41,17 +41,17 @@
   border-radius: 18px;
   padding: 6px;
   color:#f3402d;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 0 10px 5px rgba(0,0,0,.1);
   font-size: larger;
   font-size: 1.25rem;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 11px;
+  margin-bottom: 24px;
 }
 
 .gray_link {
   padding-left: 20px;
-  padding-bottom: 36px;
+  // padding-bottom: 36px;
   color: gray;
   font-size: 1.2rem;
   font-weight: 200;
@@ -60,7 +60,7 @@
 
 .gray_link:hover{
   padding-left: 20px;
-  padding-bottom: 36px;
+  // padding-bottom: 36px;
   color: #1F1F1F;
   transition-duration: 0.5s;
 }
@@ -81,7 +81,8 @@
   padding: 6px 6px;
   font-size: small;
   background-color: #ffe8df;
-  transition-duration: 1s;
+  transition-duration: .35s;
+  // transition-time-function: linear;
   margin: 16px 0px;
 }
 
@@ -91,12 +92,12 @@
   padding: 6px 6px;
   font-size: small;
   min-width: 500px;
-  margin: 4px 0px;
+  margin: 4px 100px;
   font-size: 1.25rem;
 }
 
 .round_border_gray h6 {
-  color: rgb(102, 101, 101);
+  color: black;
   line-height: 1.5;
   margin: 0;
   font-size: 1.25rem;
@@ -105,7 +106,7 @@
 }
 
 .round_border_gray:hover h6 {
-  color: rgb(102, 101, 101);
+  color: black;
   line-height: 1.5;
   margin: 0;
   font-size: 1.25rem;
@@ -120,10 +121,28 @@
 .gray_text {
   padding-left: 20px;
   padding-bottom: 36px;
-  color: gray;
+  color: black;
   line-height: 1.5;
   text-align: left;
   font-size: 1.1rem;
   font-weight: 200;
   font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 28px;
+}
+
+#select {
+font-weight: 500;
+margin-left: 17px;
+}
+
+#bookmark {
+  margin-top: 35px;
+}
+
+#results {
+background-color: rgba(255, 255, 255, .3);
 }
