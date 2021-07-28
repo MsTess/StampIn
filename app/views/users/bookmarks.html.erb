@@ -46,10 +46,11 @@
               <h5>Embassy of <%= result.embassy.own_country.name %> in <%= result.embassy.in_city %>, <%= result.embassy.host_country.name %></h5>
                 <h6>Address: <%= result.embassy.address %></h6>
               <% unless result.embassy.url.strip.empty? %>
-                <h6 class="info">URL: <%= result.embassy.url %></h6>
+
+                <h6>URL: <%= link_to result.embassy.url, result.embassy.url, target: '_blank' %></h6>
               <% end %>
               <% unless result.embassy.emails.strip.empty? %>
-                <h6 class="info">Email: <%= result.embassy.emails %></h6>
+                <h6>Email: <%= mail_to result.embassy.emails, "#{result.embassy.emails}", style:"text-decoration: none;", subject: "#{result.embassy.own_country.name} visa query", body: "Hello, I am a citizen of #{result.embassy.host_country.name}, and I am emailing to enquire as to what documents I need for a travel visa to visit #{result.embassy.own_country.name}. Thank you for your time." %></h6>
               <% end %>
             </div>
 
