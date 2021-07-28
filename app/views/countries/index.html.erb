@@ -9,8 +9,8 @@
                 <div class="bg rounded p-3 shadow-lg" id="search">
                   <div class="form">
                     <%= simple_form_for(@visa_result) do |f| %>
-                    <%= f.input :origin_country, collection: @countries, label: 'Where are you from?', required: true, error: 'This field is required'%>
-                    <%= f.input :destination_country, collection: @countries, label: 'Where do you want to go?', required: true, error: 'This field is required'%>
+                    <%= f.input :origin_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where are you from?'%>
+                    <%= f.input :destination_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where do you want to go?'%>
                     <%= f.submit "Get Visa Info", class: 'blue_button' %>
                     <% end %>
                   </div>
