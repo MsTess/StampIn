@@ -33,6 +33,7 @@
           </div>
         <% else %>
             <% @embassies.each do |embassy| %>
+            <% unless embassy.latitude.strip.empty? %>
             <%= link_to embassy, style:"text-decoration: none; color: black" do %>
               <div class="justify-content-center">
                 <div class="round_border_gray">
@@ -41,6 +42,7 @@
               </div>
             <% end %>
           <% end %>
+        <% end %>
         <% end %>
         <div class="row justify-content-center" id="bookmark">
           <%= link_to "Bookmark This Search", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;", class:"blue-button-modified", id:"save-bookmark" %>
