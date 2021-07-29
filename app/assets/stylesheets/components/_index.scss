@@ -50,32 +50,25 @@ h1 {
 }
 
 .round_border_gray {
-  border: 0.5px solid gray;
   border-radius: 12px;
   padding: 6px 6px;
   font-size: small;
-  min-width: 500px;
   margin: 16px 0px;
   font-size: 1.25rem;
 }
 
 .round_border_gray:hover {
-  border: 0.5px solid #f8cebd;
   border-radius: 12px;
   padding: 6px 6px;
   font-size: small;
   background-color: #ffe8df;
   transition-duration: 1s;
-  min-width: 500px;
   margin: 16px 0px;
 }
 
 .round_border_gray_no_hover {
-  border: 0.5px solid gray;
-  border-radius: 12px;
   padding: 6px 6px;
   font-size: small;
-  min-width: 500px;
   margin: 4px 0px;
   font-size: 1.25rem;
 }
@@ -145,10 +138,6 @@ h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
-.extra-padding {
-  padding-left: 36px;
-}
-
 .gray_text {
   padding-left: 20px;
   padding-bottom: 36px;
@@ -213,6 +202,7 @@ background-repeat: no-repeat;
 background-size: cover;
 position: relative;
 margin-bottom: 30px;
+margin-top: -30px;
 }
 
 /* Place text in the middle of the image */
@@ -279,4 +269,37 @@ background-repeat: no-repeat;
 background-size: cover;
 position: relative;
 margin-bottom: 30px;
+}
+
+.yellow-button {
+    border-radius: 4px;
+    background-color: rgb(255, 172, 0);
+    border: none;
+    color: #212529;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    width: 168px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.yellow-button:hover {
+    border-radius: 4px;
+    background-color: #ffc049;
+    color: #212529;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    width: 168px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lead {
+padding-left: 20px;
 }

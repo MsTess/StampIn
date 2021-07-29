@@ -16,7 +16,7 @@
           <%= simple_form_for(@visa_result) do |f| %>
           <%= f.input :origin_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where are you from?'%>
           <%= f.input :destination_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where do you want to go?'%>
-          <%= f.submit "Get Visa Info", class: 'blue_button' %>
+          <%= f.submit "Get Visa Info", class: 'yellow-button' %>
           <% end %>
         </div>
       </div>

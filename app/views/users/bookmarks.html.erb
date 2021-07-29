@@ -4,7 +4,7 @@
     <div class="bg-white rounded p-5 shadow">
       <div class="visa_results_heading">
         <div class="row justify-content-center">
-          <h3>Your saved visa results </h3>
+          <h1>Your saved visa results </h1>
         </div> 
       </div>
       <hr class="my-4">
@@ -12,7 +12,7 @@
       <div class="embassy-container">
         <div class="row">
           <div class="round_border_gray_no_hover col-8">
-            <h6 class="extra-padding">From <%= result.visa_result.origin_country.name %> to <%= result.visa_result.destination_country.name %>: <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %> </h6>
+            <h6>From <%= result.visa_result.origin_country.name %> to <%= result.visa_result.destination_country.name %>: <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %> </h6>
           </div>
           <div class="col-2">
           </div>
@@ -27,7 +27,7 @@
       </div>
       <% end %>
       <div class="visa_results_heading row justify-content-center">
-        <h3 class="padding-top">Your saved embassies </h3>
+        <h1 class="padding-top">Your saved embassies </h1>
       </div> 
       <hr class="my-4">
       <% @bookmark_embassies.each do |result|%>
