@@ -1,0 +1,39 @@
+#bookmark-box {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.visa-results {
+  padding: 10px 5px 10px 5px;
+}
+
+.info {
+  overflow-wrap: break-word;
+}
+
+.container-sm {
+  display: inline-block;
+}
+
+#delete-embassy {
+  font-size: 20px;
+}
+
+#v-box {
+  position: relative;
+}
+
+.delete-link {
+  position: absolute;
+  right: -50px;
+  top: -5px;
+  // right: 8px;
+  // top: 5px;
+}
+
+
+.fa-trash-alt {
+position: relative;
+top:100;
+right:100;
+}
+

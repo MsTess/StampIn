@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11 col-lg-11 col-sm-11">
-    <div class="bg-white rounded p-5 shadow">
+    <div class="bg-white rounded p-5 shadow-lg" id="bookmark-box">
       <div class="visa_results_heading">
         <div class="row justify-content-center">
           <h1>Your saved visa results </h1>
@@ -9,46 +9,53 @@
       </div>
       <hr class="my-4">
       <% @bookmark_visa_results.each do |result|%>
-      <div class="embassy-container">
-        <div class="row">
-          <div class="round_border_gray_no_hover col-8">
-            <h6>From <%= result.visa_result.origin_country.name %> to <%= result.visa_result.destination_country.name %>: <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %> </h6>
-          </div>
-          <div class="col-2">
-          </div>
-          <div class="col-2">
-            <%= link_to "Delete",
-            delete_visa_result_bookmark_path(result.id),
-            class: "blue-button-modified",
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+      <div class="embassy-container container-sm">
+        <div class="row justify-content-center">
+          <div class="round_border_gray_no_hover col-8 container" id="v-box">
+
+            <div class="delete-link">
+              <%= link_to " ",
+              delete_visa_result_bookmark_path(result.id),
+              id: "delete",
+              class: "fas fa-trash-alt",
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+            </div>
+
+            <h6 class="visa-results">From <%= result.visa_result.origin_country.name %> to <%= result.visa_result.destination_country.name %>:
+              <br>
+              <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %></h6>
           </div>
         </div>
       </div>
       <% end %>
+
       <div class="visa_results_heading row justify-content-center">
+
         <h1 class="padding-top">Your saved embassies </h1>
       </div> 
       <hr class="my-4">
       <% @bookmark_embassies.each do |result|%>
         <div class="embassy-container">
-          <div class="row">
+          <div class="row justify-content-center">
 
             <div class="embassy-part-container col-10">
               <h5>Embassy of <%= result.embassy.own_country.name %> in <%= result.embassy.in_city %>, <%= result.embassy.host_country.name %></h5>
                 <h6>Address: <%= result.embassy.address %></h6>
               <% unless result.embassy.url.strip.empty? %>
-                <h6>URL: <%= result.embassy.url %></h6>
+
+                <h6>URL: <%= link_to result.embassy.url, result.embassy.url, target: '_blank' %></h6>
               <% end %>
               <% unless result.embassy.emails.strip.empty? %>
-                <h6>Email: <%= result.embassy.emails %></h6>
+                <h6>Email: <%= mail_to result.embassy.emails, "#{result.embassy.emails}", style:"text-decoration: none;", subject: "#{result.embassy.own_country.name} visa query", body: "Hello, I am a citizen of #{result.embassy.host_country.name}, and I am emailing to enquire as to what documents I need for a travel visa to visit #{result.embassy.own_country.name}. Thank you for your time." %></h6>
               <% end %>
             </div>
 
             <div class="embassy-part-container col-2">
-              <%= link_to "Delete",
+              <%= link_to " ",
                 delete_embassy_bookmark_path(result.id),
-                class: "blue-button-modified",
+                id: "delete-embassy",
+                class: "fas fa-trash-alt",
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
             </div>

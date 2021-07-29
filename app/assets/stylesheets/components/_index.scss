@@ -11,7 +11,6 @@ body {
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
-}
 
 .round_border_red {
   border: 1px;
@@ -308,3 +307,6 @@ padding-left: 20px;
   background-color: rgba(255, 255, 255, .3);
 }
 
+.container {
+  overflow-wrap: break-word;
+}
