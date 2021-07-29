@@ -15,13 +15,13 @@ h1 {
 
 .round_border_red {
   border: 1px;
-  border: solid;
+
   border-radius: 18px;
   padding: 6px;
   color:#f3402d;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1); 
-  font-size: larger;
-  font-size: 1.25rem;
+
+ 
+  font-size: 2rem;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
 }
@@ -238,7 +238,45 @@ text-shadow: 1px 1px 9px #7d594c;
   color: white;
   font-weight: 200;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   }
 
+  .black-button {
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: black;
+    box-shadow: 1px 2px 4px rgba(0,0,0,.1);
+    border-color: black;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    display: inline-block;
+}
 
+.black-button:hover {
+  background-color: #e2e1dd;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: black;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.1);
+  border-color: #c3c3c3cc;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition-duration: 0.5s;
+}
+
+.small-banner-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("8.jpg");
+
+/* Set a specific height */
+height: 200px;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+margin-bottom: 30px;
+}
