@@ -191,7 +191,7 @@ body, html {
 /* The hero image */
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("2.jpg");
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://res.cloudinary.com/stampin/image/upload/v1627573057/2_f0aotb.jpg");
 
 /* Set a specific height */
 height: 440px;
@@ -258,7 +258,7 @@ text-shadow: 1px 1px 9px #7d594c;
 }
 
 .small-banner-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("8.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://res.cloudinary.com/stampin/image/upload/v1627573059/8_cmeffk.jpg");
 
 /* Set a specific height */
 height: 200px;
