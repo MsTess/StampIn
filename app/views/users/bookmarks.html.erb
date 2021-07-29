@@ -7,25 +7,33 @@
           <h3>Your saved visa results </h3>
         </div> 
       </div>
+
       <hr class="my-4">
+
       <% @bookmark_visa_results.each do |result|%>
-      <div class="embassy-container">
+      <div class="embassy-container container-sm">
         <div class="row justify-content-center">
-          <div class="round_border_gray_no_hover col-8">
-            <h6 class="visa-results">From <%= result.visa_result.origin_country.name %> to <%= result.visa_result.destination_country.name %>: <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %> </h6>
-          </div>
-          <div class="col-2">
-          </div>
-          <div class="col-2">
-            <%= link_to "Delete",
-            delete_visa_result_bookmark_path(result.id),
-            class: "blue-button-modified",
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+          <div class="round_border_gray_no_hover col-8 container" id="v-box">
+
+            <div class="delete-link">
+              <%= link_to " ",
+              delete_visa_result_bookmark_path(result.id),
+              id: "delete",
+              class: "fas fa-trash-alt",
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+            </div>
+
+            <h6 class="visa-results">From <%= result.visa_result.origin_country.name %> to <%= result.visa_result.destination_country.name %>:
+              <br>
+              <%= result.visa_result.visa_modality.capitalize.gsub(/_/,' ') %> <%= result.visa_result.evisa_modality.capitalize.gsub(/_/,' ') %></h6>
+
+
           </div>
         </div>
       </div>
       <% end %>
+
       <div class="visa_results_heading row justify-content-center">
         <h3 class="padding-top" id="saved">Your saved embassies </h3>
       </div> 
@@ -38,6 +46,7 @@
               <h5>Embassy of <%= result.embassy.own_country.name %> in <%= result.embassy.in_city %>, <%= result.embassy.host_country.name %></h5>
                 <h6>Address: <%= result.embassy.address %></h6>
               <% unless result.embassy.url.strip.empty? %>
+
                 <h6>URL: <%= link_to result.embassy.url, result.embassy.url, target: '_blank' %></h6>
               <% end %>
               <% unless result.embassy.emails.strip.empty? %>
@@ -46,9 +55,10 @@
             </div>
 
             <div class="embassy-part-container col-2">
-              <%= link_to "Delete",
+              <%= link_to " ",
                 delete_embassy_bookmark_path(result.id),
-                class: "blue-button-modified",
+                id: "delete-embassy",
+                class: "fas fa-trash-alt",
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
             </div>

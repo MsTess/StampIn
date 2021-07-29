@@ -3,21 +3,35 @@
   <div class="row justify-content-center">
     <div class="col-6 col-lg-6 col-sm-6">
       <div class="bg-white rounded p-3 shadow-lg" style="opacity: 0.9;">
-        <h3 class="display-4"><%= @embassy.embassy_consulate %> of <%= @embassy.own_country.name %> in <%= @embassy.in_city %>, <%= link_to @embassy.host_country.name, country_path(@embassy.host_country), style:"text-decoration: none;" %></h3>
-        <div class="form-container">
+        <div class="container">
+          <h3 class="display-4"><%= @embassy.embassy_consulate %> of <%= @embassy.own_country.name %> in <%= @embassy.in_city %>, <%= link_to @embassy.host_country.name, country_path(@embassy.host_country), style:"text-decoration: none;" %></h3>
+        </div>
+
+        <div class="form-container container">
           <hr class="my-4">
-          <% unless @embassy.address.strip.empty? %>
-          <h6 class="lead">Street Address: <i><%= @embassy.address %></i></h6>
+
+          <div class="container">
+            <% unless @embassy.address.strip.empty? %>
+            <h6 class="lead">Street Address: <i><%= @embassy.address %></i></h6>
+
           <hr class="my-4">
           <% end %>
+          </div>
+
+          <div class="container">
           <% unless @embassy.emails.strip.empty? %>
           <h3 class="lead">E-Mail Address: <%= mail_to @embassy.emails, "#{@embassy.emails}", style:"text-decoration: none;", subject: "#{@embassy.own_country.name} visa query", body: "Hello, I am a citizen of #{@embassy.host_country.name}, and I am emailing to enquire as to what documents I need for a travel visa to visit #{@embassy.own_country.name}. Thank you for your time." %></h3>
           <hr class="my-4">
           <% end %>
+          </div>
+
+          <div class="container">
           <% unless @embassy.url.strip.empty? %>
           <h5 class="lead">Web Address: <%= link_to @embassy.url, @embassy.url, target: '_blank' %></h5>
           <hr class="my-4">
           <% end %>
+          </div>
+
           <div class="row justify-content-center">
           <%= link_to "Bookmark Embassy", user_bookmark_embassies_path(@user, bookmark_embassy: {embassy_id: @embassy.id}), method: :post, style:"text-decoration: none;", class: "blue-button-modified", id: "save-bookmark" %>
           </div>
