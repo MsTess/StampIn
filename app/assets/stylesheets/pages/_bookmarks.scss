@@ -14,9 +14,21 @@
   display: inline-block;
 }
 
+#delete-embassy {
+  font-size: 20px;
+}
 
+#v-box {
+  position: relative;
+}
 
-
+.delete-link {
+  position: absolute;
+  right: -50px;
+  top: -5px;
+  // right: 8px;
+  // top: 5px;
+}
 
 
 .fa-trash-alt {
@@ -25,7 +37,3 @@ top:100;
 right:100;
 }
 
-
-.container {
-  position: relative;
-}
