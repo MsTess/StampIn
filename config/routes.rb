@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :countries, only: [:index, :show]
 
   get "users/:id/bookmarks", :to => "users#bookmarks", :as => "user_bookmarks"
-  
+  get "users/:id/FAQ", :to => "users#faq", :as => "faq"
  
   #get :visa_results_display, :to => "visa_results#visa_result_display"
   resources :visa_results, only: [:create, :show]

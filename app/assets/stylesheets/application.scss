@@ -18,11 +18,13 @@
 @import "pages/bookmarks";
 
 .main {
-    background-image: url("https://res.cloudinary.com/stampin/image/upload/o_15/v1626354248/stampinbackground.png");
+    background-image: url("https://unsplash.com/photos/A5rCN8626Ck");
     background-position: top;
     background-repeat: no-repeat;
     min-height: 100vh;
-
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: #efede7;
   }
 
   .mapboxgl-marker {

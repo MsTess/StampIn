@@ -1,24 +1,27 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-6 col-lg-6 col-sm-6">
+    <div class="col-12 col-lg-6">
       <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
         <h2 class="display-4"><img class="lead" width="75px" src=<%= @country.flag %>>  <%= @country.name %></h2>
         <div class="form-container">
           <hr class="my-4">
           <p class="lead">The capital of <%= @country.name.capitalize %> is <%= @country.capital %>, and the people characterize themselves as <%= @country.demonym %>.</p>
-          <h6 class="lead">Languages spoken in <i><%= @country.name %>:</i></h3>
+          <h6 class="lead">Languages spoken in <i><%= @country.name %>:</i></h6>
           <p class="lead"><%= @country.languages %></p>
-          <h6 class="lead">Official currency of <i><%= @country.name %>:</i></h3>
+          <h6 class="lead">Official currency of <i><%= @country.name %>:</i></h6>
           <p class="lead"><%= @country.currencies %></p>
         </div>
       </div>
     </div>
-    <div class="col-6 shadow border border-light align-middle p-1">
-          <div id="map"
-            style="width: 100%; height: 100%;"
+    <div class="col-12 col-lg-6" style="min-height:500px">
+
+        <div class="shadow border border-light align-middle p-5"
+            id="map"
+            style="width: 100%; height: 100%"
             data-markers="<%= @markers.to_json %>"
             >
-      </div>
+        </div>
+
     </div>
   </div>
   </div>
