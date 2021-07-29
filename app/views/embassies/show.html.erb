@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
       <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
-        <h3 class="display-4">Embassy of <%= @embassy.own_country.name %> in <%= @embassy.in_city %>, <%= @embassy.host_country.name %></h3>
+        <h3 class="display-4"><%= @embassy.embassy_consulate %> of <%= @embassy.own_country.name %> in <%= @embassy.in_city %>, <%= @embassy.host_country.name %></h3>
 
         <div class="form-container">
           <hr class="my-4">
@@ -11,7 +11,7 @@
           <hr class="my-4">
           <% end %>
           <% unless @embassy.emails.strip.empty? %>
-          <h3 class="lead">E-Mail Address: <%= mail_to @embassy.emails, "#{@embassy.emails}", subject: "#{@embassy.own_country.name} visa query", body: "Hello, I am a citizen of #{@embassy.host_country.name}, and I am emailing to enquire as to what documents I need for a visa to visit #{@embassy.own_country.name}. Thank you for your time." %></h3>
+          <h3 class="lead">E-Mail Address: <%= mail_to @embassy.emails, "#{@embassy.emails}", subject: "#{@embassy.own_country.name} visa query", body: "Hello, I am a citizen of #{@embassy.host_country.name}, and I am emailing to enquire as to what documents I need for a travel visa to visit #{@embassy.own_country.name}. Thank you for your time." %></h3>
           <hr class="my-4">
           <% end %>
           <% unless @embassy.url.strip.empty? %>
