@@ -31,21 +31,9 @@
     <div class="main">
       <%= yield %>
     </div>
-    <div class="footer-basic">
-        <footer>
-            <div class="social">
-              <%= link_to " ", "https://github.com/MsTess/StampIn", class: "fab fa-github", target: '_blank', style: 'text-decoration: none'%>
-            </div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Team</a></li>
-                <li class="list-inline-item"><a href="#">Dedications</a></li>
-            </ul>
-            <p class="copyright">StampIn © 2021</p>
-        </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
     <%= javascript_pack_tag 'map' %>
+
+    <%= render 'shared/footer' %>
   </body>
 </html>
