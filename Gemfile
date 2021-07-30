@@ -64,5 +64,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'geocoder'
-
-gem 'exception_handler'
+gem 'exception_handler', '~> 0.8.0.0'
