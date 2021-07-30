@@ -1,7 +1,19 @@
+// main footer styling
 .footer-basic {
   padding:40px 0;
   background-color:#ffffff;
-  color:#4b4c4d;
+  color:#343a40;
+  padding-bottom: 40px;
+  padding-top: 35px;
+
+}
+
+.footer-logo {
+  background-image: url(https://res.cloudinary.com/stampin/image/upload/v1627645830/Oh_No_2_wxf1ty.png);
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 .footer-basic ul {
@@ -25,6 +37,7 @@
 
 .footer-basic ul a:hover {
   opacity:1;
+  color: black;
 }
 
 .footer-basic .social {
