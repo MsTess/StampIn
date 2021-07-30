@@ -262,7 +262,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   dotenv-rails
-  exception_handler (~> 0.8.0.0)
+  exception_handler
   font-awesome-sass
   geocoder
   jbuilder (~> 2.7)
