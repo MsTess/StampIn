@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11 col-lg-11 col-sm-11">
-    <div class="bg-white rounded mt-5 shadow">
+    <div class="bg-white rounded mt-5 shadow-lg">
       <div class="small-banner-image">
       </div>
       <div class="p-5">
@@ -43,7 +43,7 @@
             <% end %>
           <% end %>
           <div class="row justify-content-center padding-top">
-            <%= link_to "Bookmark Visa Result", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;", class:"black-button", id:"save-bookmark" %>
+            <%= link_to "Bookmark Search", user_bookmark_visa_results_path(@user, bookmark_visa_result: {visa_result_id: @visa_result.id}), method: :post, style:"text-decoration: none;", class:"orange-button", id:"save-bookmark" %>
           </div>
         </div>
       </div> 

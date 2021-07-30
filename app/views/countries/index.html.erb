@@ -11,12 +11,12 @@
         <p>Some travel plans require a visa. Use StampIn to find out which one you need.</p>
       </div>
 <!--               <div class="col-6"> -->
-      <div class="bg-white rounded p-3 shadow">
+      <div class="bg-white rounded p-3 shadow-lg">
         <div class="form">
           <%= simple_form_for(@visa_result) do |f| %>
           <%= f.input :origin_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where are you from?'%>
           <%= f.input :destination_country, input_html: {class: "country_input", required: true}, collection: @countries, label: 'Where do you want to go?'%>
-          <%= f.submit "Get Visa Info", class: 'yellow-button' %>
+          <%= f.submit "Get Visa Info", class: 'orange-button' %>
           <% end %>
         </div>
       </div>
