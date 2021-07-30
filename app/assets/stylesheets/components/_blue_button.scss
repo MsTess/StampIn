@@ -23,22 +23,84 @@
   }
 }
 
-.black_button {
-  color: white;
-  background-color: black;
-  padding: 12px;
-  border-radius: 12px;
-  font-family: "Roboto", sans-serif;
-  font-size: smaller;
-  letter-spacing: 0.5px;
+.blue-button-modified {
+  background: #e2f7fc;
+  border: 1px;
+  border-radius: 6px;
+  padding: 12px 36px;
+  color: #545b62;
+  box-shadow: 0 6px 16px rgba(0,0,0,.1);
+  border-color: #c0f0fc;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  display: inline-block;
+}
 
-  &:hover {
-    color: white;
-    background-color: rgb(41, 40, 40);
-    padding: 12px;
-    border-radius: 12px;
-    font-family: "Roboto", sans-serif;
-    font-size: smaller;
-    letter-spacing: 0.5px;
-  }
+.blue-button-modified:hover {
+  background: #d0eff7;
+  border: 1px;
+  border-radius: 6px;
+  padding: 12px 36px;
+  color: #282b2e;
+  box-shadow: 0 6px 16px rgba(0,0,0,.1);
+  border-color: #a3e7f8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.black-button {
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: black;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.1);
+  border-color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.black-button:hover {
+  background-color: #e2e1dd;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: black;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.1);
+  border-color: #c3c3c3cc;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition-duration: 0.5s;
+}
+
+.yellow-button {
+  border-radius: 4px;
+  background-color: rgb(255, 172, 0);
+  border: none;
+  color: #212529;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+  width: 168px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.yellow-button:hover {
+  border-radius: 4px;
+  background-color: #ffc049;
+  color: #212529;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+  width: 168px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: 'Roboto', sans-serif;
 }

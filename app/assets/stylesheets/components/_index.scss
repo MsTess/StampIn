@@ -4,26 +4,20 @@
 @import "navbar";
 @import "map";
 
-body {
-  background-color: white;
-}
-
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200; 
 }
 
 .round_border_red {
-  border: 1px;
-
-  border-radius: 18px;
-  padding: 6px;
-  color:#f3402d;
-
- 
-  font-size: 2rem;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
+    border-radius: 18px;
+    padding: 6px;
+    color: #f3402d;
+    font-size: larger;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 24px
 }
 
 .gray_link {
@@ -62,7 +56,7 @@ h1 {
   padding: 6px 6px;
   font-size: small;
   background-color: #ffe8df;
-  transition-duration: 1s;
+  transition-duration: .3s;
   margin: 16px 0px;
 }
 
@@ -91,32 +85,6 @@ h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
-.blue-button-modified {
-  background: #e2f7fc;
-  border: 1px;
-  border-radius: 6px;
-  padding: 12px 36px;
-  color: #545b62;
-  box-shadow: 0 6px 16px rgba(0,0,0,.1);
-  border-color: #c0f0fc;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
-  display: inline-block;
-}
-
-.blue-button-modified:hover {
-  background: #d0eff7;
-  border: 1px;
-  border-radius: 6px;
-  padding: 12px 36px;
-  color: #282b2e;
-  box-shadow: 0 6px 16px rgba(0,0,0,.1);
-  border-color: #a3e7f8;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
-  display: inline-block;
-  text-decoration: none;
-}
 
 .embassy-container {
   border: cornflowerblue;
@@ -154,7 +122,7 @@ h1 {
 }
 
 .display-4-modified {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -171,7 +139,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--charcoal);
 
 }
@@ -186,118 +154,7 @@ h4 {
 
 body, html {
   height: 100%;
-}
-
-/* The hero image */
-.hero-image {
-/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("2.jpg");
-
-/* Set a specific height */
-height: 440px;
-
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-margin-bottom: 30px;
-margin-top: -30px;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: white;
-font-weight: 500;
-font-family: 'Montserrat', sans-serif;
-font-size: 3.5rem;
-text-shadow: 1px 1px 9px #7d594c;
-}
-
-.hero-comment {
-  text-align: center;
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: 200;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
-  }
-
-  .black-button {
-    border: 1px solid;
-    border-radius: 6px;
-    padding: 8px 12px;
-    color: black;
-    box-shadow: 1px 2px 4px rgba(0,0,0,.1);
-    border-color: black;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.1rem;
-    display: inline-block;
-}
-
-.black-button:hover {
-  background-color: #e2e1dd;
-  border: 1px solid;
-  border-radius: 6px;
-  padding: 8px 12px;
-  color: black;
-  box-shadow: 1px 2px 4px rgba(0,0,0,.1);
-  border-color: #c3c3c3cc;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
-  display: inline-block;
-  transition-duration: 0.5s;
-}
-
-.small-banner-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("8.jpg");
-
-/* Set a specific height */
-height: 200px;
-
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-margin-bottom: 30px;
-}
-
-.yellow-button {
-    border-radius: 4px;
-    background-color: rgb(255, 172, 0);
-    border: none;
-    color: #212529;
-    text-align: center;
-    font-size: 16px;
-    padding: 8px;
-    width: 168px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.yellow-button:hover {
-    border-radius: 4px;
-    background-color: #ffc049;
-    color: #212529;
-    text-align: center;
-    font-size: 16px;
-    padding: 8px;
-    width: 168px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    font-family: 'Roboto', sans-serif;
+  overflow: scroll;
 }
 
 .lead {
@@ -310,4 +167,12 @@ padding-left: 20px;
 
 .container {
   overflow-wrap: break-word;
+}
+
+#flag {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("9.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
