@@ -1,13 +1,34 @@
+<div class="bookmark-image">
+  <div class="banner-container">
+    <div class="row justify-content-center">
+    <h1 class="hero-text">MY BOOKMARKS</h1>
+      <div class="banner-container">
+    <p class="FAQ-comment">Save your visa searches and local embassies to make trip smoother.</p>
+  </div>
+  </div>
+</div>
+</div>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11 col-lg-11 col-sm-11">
     <div class="bg-white rounded p-5 shadow-lg" id="bookmark-box">
       <div class="visa_results_heading">
         <div class="row justify-content-center">
-          <h1>Your saved visa results </h1>
+          <h1>My Visa Search Results</h1>
         </div> 
       </div>
       <hr class="my-4">
+      <% if @bookmark_visa_results.empty? %>
+            <div class="embassy-container">
+        <div class="row justify-content-center">
+          <div class="round_border_gray_no_hover embassy-part-container col-10">
+            <h6 class="visa-results">
+              <i>No bookmarked visa search results yet!</i>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <% else %>
       <% @bookmark_visa_results.each do |result|%>
       <div class="embassy-container">
         <div class="row justify-content-center">
@@ -27,12 +48,24 @@
         </div>
       </div>
       <% end %>
+      <% end %>
 
       <div class="visa_results_heading row justify-content-center">
 
-        <h1 class="padding-top">Your saved embassies </h1>
+        <h1 class="padding-top">My Embassies</h1>
       </div> 
       <hr class="my-4">
+      <% if @bookmark_embassies.empty? %>
+        <div class="embassy-container">
+        <div class="row justify-content-center">
+          <div class="round_border_gray_no_hover embassy-part-container col-10">
+            <h6 class="visa-results">
+              <i>No bookmarked embassies yet!</i>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <% else %>
       <% @bookmark_embassies.each do |result|%>
         <div class="embassy-container">
           <div class="row justify-content-center">
@@ -59,6 +92,7 @@
             </div>
           </div>
         </div> 
+      <% end %>
       <% end %>
       </div> 
     </div>
