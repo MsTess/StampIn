@@ -19,4 +19,8 @@ Rails.application.routes.draw do
 
   delete "/bookmark_visa_results/:id", :to => "bookmark_visa_results#destroy", :as => "delete_visa_result_bookmark"
   delete "/bookmark_embassies/:id", :to => "bookmark_embassies#destroy", :as => "delete_embassy_bookmark"
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+  match "/422", to: "errors#unprocessable_entity", via: :all
+
 end

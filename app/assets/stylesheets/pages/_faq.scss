@@ -1,0 +1,87 @@
+//colors
+$grey: #cacaca;
+
+// main
+#page_container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+// search input
+// icon
+#accordion_search_bar_container {
+  position: relative;
+
+  #plane {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 20px;
+    bottom: 14px;
+    color: grey;
+  }
+  // bar
+  #accordion_search_bar {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid $grey;
+    border-radius: 25px;
+    outline: 0;
+  }
+}
+
+// make all the line clickable
+.panel-title {
+  a {
+    display: block;
+    color: var(--charcoal);
+  }
+}
+
+
+// FAQ banner image and text
+.FAQ-image {
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://res.cloudinary.com/stampin/image/upload/v1627573056/3_zkpzyd.jpg");
+
+/* Set a specific height */
+height: 440px;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+margin-bottom: 30px;
+margin-top: -30px;
+}
+
+/* Place text in the middle of the image */
+#FAQ-title {
+text-align: center;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+font-size: 3.5rem;
+text-shadow: 1px 1px 9px #7d594c;
+}
+
+.FAQ-comment {
+  text-align: center;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+  }

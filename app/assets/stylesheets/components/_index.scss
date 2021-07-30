@@ -143,7 +143,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--charcoal);
 
 }
@@ -160,6 +160,121 @@ body, html {
   height: 100%;
 }
 
+<<<<<<< HEAD
+=======
+/* The hero image */
+.hero-image {
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://res.cloudinary.com/stampin/image/upload/v1627573057/2_f0aotb.jpg");
+
+/* Set a specific height */
+height: 440px;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+margin-bottom: 30px;
+margin-top: -30px;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+font-size: 3.5rem;
+text-shadow: 1px 1px 9px #7d594c;
+}
+
+.hero-comment {
+  text-align: center;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  }
+
+  .black-button {
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: black;
+    box-shadow: 1px 2px 4px rgba(0,0,0,.1);
+    border-color: black;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.black-button:hover {
+  background-color: #e2e1dd;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: black;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.1);
+  border-color: #c3c3c3cc;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition-duration: 0.5s;
+}
+
+.small-banner-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://res.cloudinary.com/stampin/image/upload/v1627573059/8_cmeffk.jpg");
+
+/* Set a specific height */
+height: 200px;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+margin-bottom: 30px;
+}
+
+.yellow-button {
+    border-radius: 4px;
+    background-color: rgb(255, 172, 0);
+    border: none;
+    color: #212529;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    width: 168px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.yellow-button:hover {
+    border-radius: 4px;
+    background-color: #ffc049;
+    color: #212529;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    width: 168px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+>>>>>>> 84fe7e20534bb6a63b970fd3da81f03b0149b3ea
 .lead {
 padding-left: 20px;
 }
