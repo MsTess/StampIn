@@ -7,12 +7,17 @@
       <div class="p-5">
         <div class="visa_results_heading">
           <div class="row justify-content-center">
-            <h2>Visa from <%= @o_c.name %> to <%= @d_c.name %></h2>
+            <h2>Visa from <%= @o_c.name %> to <%= link_to @d_c.name, country_path(@d_c), style:"color: var(--charcoal);" %></h2>
           </div>
+
+          <!-- Extra link to country profile if needed -->
+<!--           <div class="row justify-content-center">
+            <%= link_to "Click to find out more about your destination", country_path(@d_c), style:"text-decoration: none;", class:"gray_link" %>
+          </div> -->
+
+
           <hr class="my-4">
-          <div class="row justify-content-left">
-            <%= link_to "Find out more about your destination", country_path(@d_c), style:"text-decoration: none;", class:"gray_link" %>
-          </div> 
+
           <div class="row justify-content-center">
             <div class="round_border_red">
               <%= @visa_result.visa_modality.capitalize.gsub(/_/,' ') %>
