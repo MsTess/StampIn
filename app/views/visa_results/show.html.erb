@@ -1,22 +1,26 @@
+<div class="visa-image">
+  <div class="banner-container">
+    <div class="row justify-content-center">
+    <h1 class="hero-text">VISA FROM <%= @o_c.name.upcase %> TO <%= @d_c.name.upcase %></h1>
+      <div class="banner-container">
+    <p class="FAQ-comment"><%= link_to "Click here to find out more about #{@d_c.name}", country_path(@d_c), style:"text-decoration: none; color: white;" %></p>
+  </div>
+  </div>
+</div>
+</div>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11 col-lg-11 col-sm-11">
     <div class="bg-white rounded mt-5 shadow-lg">
-      <div class="small-banner-image">
-      </div>
+
       <div class="p-5">
         <div class="visa_results_heading">
           <div class="row justify-content-center">
-            <h2>Visa from <%= @o_c.name %> to <%= link_to @d_c.name, country_path(@d_c), style:"color: var(--charcoal);" %></h2>
+<!--             <h2>Visa from <%= @o_c.name %> to <%= link_to @d_c.name, country_path(@d_c), style:"color: var(--charcoal);" %></h2>
           </div>
 
-          <!-- Extra link to country profile if needed -->
-<!--           <div class="row justify-content-center">
-            <%= link_to "Click to find out more about your destination", country_path(@d_c), style:"text-decoration: none;", class:"gray_link" %>
-          </div> -->
 
-
-          <hr class="my-4">
+          <hr class="my-4"> -->
 
           <div class="row justify-content-center">
             <div class="round_border_red">
@@ -60,6 +64,6 @@
 <script>
 const save_bookmark = document.getElementById("save-bookmark");
 save_bookmark.addEventListener("click", (event) => {
-  alert("The bookmark saved!");
+  alert("Search saved to My Bookmarks!");
 });
 </script>
