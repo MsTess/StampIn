@@ -12,7 +12,7 @@ $grey: #cacaca;
 #accordion_search_bar_container {
   position: relative;
 
-  #plane {
+  #search-icon {
     width: 18px;
     height: 18px;
     position: absolute;
@@ -23,12 +23,14 @@ $grey: #cacaca;
   // bar
   #accordion_search_bar {
     display: block;
-    margin: 10px auto;
+    margin-top: auto;
+    margin-bottom: 30px;
     width: 100%;
     padding: 7px 10px;
     border: 1px solid $grey;
     border-radius: 25px;
     outline: 0;
+    font-family: 'Roboto', sans-serif;
   }
 }
 
@@ -37,6 +39,8 @@ $grey: #cacaca;
   a {
     display: block;
     color: var(--charcoal);
+    text-decoration: none;
+    padding: 5px;
   }
 }
 
@@ -85,3 +89,46 @@ text-shadow: 1px 1px 9px #7d594c;
   margin-top: 1.1rem;
   margin-bottom: 1.1rem;
   }
+
+// Select FAQ buttons
+
+#round_border_faq {
+  border-radius: 25px;
+  padding: 6px 6px;
+  margin: 16px 0px;
+  font-size: 1.25rem;
+  color: grey;
+  border-bottom: .15px solid;
+}
+
+#round_border_faq:hover {
+  border-radius: 12px;
+  padding: 6px 6px;
+  background-color: #d3f7ff;
+  transition-duration: .3s;
+  margin: 16px 0px;
+}
+
+#round_border_faq_no_hover {
+  padding: 6px 6px;
+  margin: 4px 0px;
+  font-size: 1.25rem;
+}
+
+h6 {
+  color: rgb(102, 101, 101);
+  line-height: 1.5;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h6 {
+  color: rgb(102, 101, 101);
+  line-height: 1.5;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+}
