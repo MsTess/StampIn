@@ -17,7 +17,7 @@
 ## Description
 #### StampIn represents the end of a six-month long journey for four classmates in Le Wagon’s full stack bootcamp, batch #572, learning to code and work together remotely while living and working internationally. This website comes from the shared struggle of living a nomadic lifestyle abroad, and constantly having to make sure all the right travel documents are in order while simultaneously traveling with people from a variety of countries.
 
-##Future Implementations
+## Future Implementations
 #### The StampIn team would like to add features that make it faster, easier, and more efficient for people from different countries to travel together.
 
 ## Setup/Installation Requirements
