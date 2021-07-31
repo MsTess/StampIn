@@ -36,6 +36,3 @@
 •	roseburrought@gmail.com
 •	v.stoichuk@gmail.com 
 •	patcol90@gmail.com
-
-
-![image](https://user-images.githubusercontent.com/77874349/127729503-3b41d7af-afee-45b8-983e-7e2b17d5b366.png)
