@@ -38,10 +38,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from './map';
 
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
-
+// document.addEventListener('turbolinks:load', () => {
+//   initMapbox();
+// })
+initMapbox();
 // FAQ Page
 (function(){
   var searchTerm, panelContainerId;
