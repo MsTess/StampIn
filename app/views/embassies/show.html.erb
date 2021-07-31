@@ -3,7 +3,7 @@
     <div class="col-11 col-lg-6">
       <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
         <div class="container">
-          <h3 class="display-4"><%= @embassy.embassy_consulate %> of <%= @embassy.own_country.name %> in <%= @embassy.in_city %>, <%= link_to @embassy.host_country.name, country_path(@embassy.host_country), style:"text-decoration: none;" %></h3>
+          <h2 class="display-4-modified"><%= @embassy.embassy_consulate %> of <%= @embassy.own_country.name %> in <%= @embassy.in_city %>, <%= link_to @embassy.host_country.name, country_path(@embassy.host_country), style:"text-decoration: none;" %></h2>
         </div>
          <div class="form-container container">
           <hr class="my-4">
@@ -31,7 +31,7 @@
           </div>
 
           <div class="row justify-content-center">
-          <%= link_to "Bookmark Embassy", user_bookmark_embassies_path(@user, bookmark_embassy: {embassy_id: @embassy.id}), method: :post, style:"text-decoration: none;", class: "black-button", id: "save-bookmark" %>
+          <%= link_to "Bookmark Embassy", user_bookmark_embassies_path(@user, bookmark_embassy: {embassy_id: @embassy.id}), method: :post, style:"text-decoration: none;", class: "orange-button", id: "save-bookmark" %>
           </div>
         </div>
       </div>
