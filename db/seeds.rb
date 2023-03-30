@@ -1,7 +1,8 @@
 require 'json'
 require 'open-uri'
 
-url = "https://restcountries.eu/rest/v2/all"
+# url = "https://restcountries.eu/rest/v2/all"
+url = "https://restcountries.com/v3.1/all"
 
 Country.destroy_all
 country_serialized = URI.open(url).read
